@@ -114,16 +114,11 @@ public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordRu
 
         let url = URL(string: connectURL)!
         let path = url.path.isEmpty ? "/" : url.path
-        let doneFuture = runloop.newSucceededFuture(result: ())
-        let future = HTTPClient.webSocket(scheme: .wss,
-                hostname: url.host!,
-                port: url.port,
-                path: path,
-                on: runloop
-        )
-
-        future.then {[weak self] ws -> EventLoopFuture<()> in
-            guard let this = self else { return doneFuture }
+        let future = WebSocket.connect(
+            to: URI(string: url.absoluteString),
+            on: runloop
+        ) { [weak self] ws in
+            guard let this = self else { return }
 
             DefaultDiscordLogger.Logger.log("Websocket connected, shard: \(this.description)", type: "DiscordWebSocketable")
 
@@ -132,9 +127,9 @@ public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordRu
 
             this.attachWebSocketHandlers()
             this.startHandshake()
+        }
 
-            return doneFuture
-        }.catch({[weak self] error in
+        future.catch({[weak self] error in
             guard let this = self else { return }
 
             this.handleClose(reason: error)
