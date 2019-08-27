@@ -17,7 +17,7 @@
 
 import Foundation
 import NIO
-import WebSocket
+import Vapor
 import Dispatch
 
 #if os(macOS)

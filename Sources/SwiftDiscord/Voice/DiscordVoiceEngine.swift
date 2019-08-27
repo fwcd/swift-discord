@@ -17,7 +17,7 @@
 
 import Foundation
 import Dispatch
-import WebSocket
+import Vapor
 import Socket
 import Sodium
 

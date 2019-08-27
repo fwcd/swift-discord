@@ -19,7 +19,7 @@ import Dispatch
 import Foundation
 import NIO
 import HTTP
-import WebSocket
+import Vapor
 
 /// Declares that a type will be an Engine for the Discord Gateway.
 public protocol DiscordEngineSpec : DiscordShard {
