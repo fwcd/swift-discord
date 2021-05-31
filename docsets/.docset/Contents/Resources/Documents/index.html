@@ -533,60 +533,56 @@
         <section>
           <section class="section">
             
-            <h1 id='swiftdiscord' class='heading'>SwiftDiscord</h1>
+            <h1 id='discord-client-for-swift' class='heading'>Discord Client for Swift</h1>
 
 <p><a href="https://github.com/fwcd/swift-discord/actions/workflows/linux.yml"><img src="https://github.com/fwcd/swift-discord/actions/workflows/linux.yml/badge.svg" alt="Linux"></a>
 <a href="https://fwcd.github.io/swift-discord"><img src="https://github.com/fwcd/swift-discord/actions/workflows/docs.yml/badge.svg" alt="Docs"></a></p>
 
 <p>A Discord API client library for Swift.</p>
+<h2 id='example' class='heading'>Example</h2>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Discord</span>
+<span class="kd">import</span> <span class="kt">Dispatch</span>
+
+<span class="kd">class</span> <span class="kt">Bot</span><span class="p">:</span> <span class="kt">DiscordClientDelegate</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">client</span><span class="p">:</span> <span class="kt">DiscordClient</span><span class="o">!</span>
+
+    <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="kt">DiscordClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"Bot myjwt.from.discord"</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+        <span class="n">client</span><span class="o">.</span><span class="nf">connect</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">client</span><span class="p">(</span><span class="n">_</span> <span class="nv">client</span><span class="p">:</span> <span class="kt">DiscordClient</span><span class="p">,</span> <span class="n">didCreateMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">DiscordMessage</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">content</span> <span class="o">==</span> <span class="s">"ping"</span> <span class="p">{</span>
+            <span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="p">?</span><span class="o">.</span><span class="nf">send</span><span class="p">(</span><span class="s">"pong"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">bot</span> <span class="o">=</span> <span class="kt">Bot</span><span class="p">()</span>
+<span class="nf">dispatchMain</span><span class="p">()</span>
+</code></pre>
+<h2 id='features' class='heading'>Features</h2>
 
 <ul>
-<li>Features:
-
-<ul>
-<li>Sending and receiving voice.</li>
-<li>macOS, iOS, and Linux** support.</li>
-<li>Bot and User account support.</li>
-<li>REST API separate from client. You can use the REST API separately to build your own client if you wish.</li>
-<li>Configurable sharding.</li>
-</ul></li>
+<li>macOS and Linux support</li>
+<li>v8 API (including interactions, slash commands and message components)</li>
+<li>Configurable sharding</li>
+<li>Voice support</li>
 </ul>
-
-<p>** - Linux stability is currently limited to the stability of open source Foundation, but in thoery should support everything.</p>
-
-<ul>
-<li><p>Requirements:</p>
+<h2 id='requirements' class='heading'>Requirements</h2>
 
 <ul>
-<li>libopus</li>
-<li>libsodium</li>
-<li>Swift 3</li>
-</ul></li>
-<li><p>Recommendend:</p>
+<li>Swift 5+</li>
+<li><code>libopus</code></li>
+<li><code>libsodium</code></li>
+</ul><div class="aside aside-recommended">
+    <p class="aside-title">Recommended</p>
+    <code>ffmpeg</code> (Without FFmpeg you must send raw audio)
 
-<ul>
-<li>ffmpeg (Without FFmpeg you must send raw audio)</li>
-</ul></li>
-<li><p>Installing and Building (Linux and macOS):</p>
+</div>
+<h2 id='building' class='heading'>Building</h2>
 
-<ul>
-<li>Install vapor dependencies:
-
-<ul>
-<li><code>brew tap vapor/tap &amp;&amp; brew install ctls</code> or <code>eval &quot;$(curl -sL https://apt.vapor.sh)&quot;; sudo apt-get install vapor;</code></li>
-</ul></li>
-<li>Create your Swift Package Manager project</li>
-<li>Add <code>.package(url: &quot;https://github.com/nuclearace/SwiftDiscord&quot;, .upToNextMajor(from: &quot;6.0.0&quot;))</code> to your dependencies in Package.swift</li>
-<li>Add <code>import Discord</code> to files you wish to use the module in.</li>
-<li>Run <code>swift build</code></li>
-</ul></li>
-</ul>
-
-<p>Xcode:</p>
-
-<p>If you wish to use Xcode with your Swift Package Manager project, you can do <code>swift package generate-xcodeproj</code>.  In Xcode 11 and higher, you can also add SwiftDiscord as a dependency under the <code>Link Binary With Libraries</code> section of the <code>Build Phases</code> tab of an existing Xcode project.</p>
-
-<p><img src="https://i.imgur.com/JR97eTO.png" alt=""></p>
+<p><code>swift build</code></p>
 <h2 id='usage' class='heading'>Usage</h2>
 
 <p>Checkout the <a href="https://nuclearace.github.io/SwiftDiscord/getting-started.html">getting started</a> page for a quickstart guide.</p>
