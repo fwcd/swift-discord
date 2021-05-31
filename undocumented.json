@@ -1,742 +1,742 @@
 {
   "warnings": [
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 884,
       "symbol": "DiscordAllowedMentionType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 885,
       "symbol": "DiscordAllowedMentionType.roles",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 886,
       "symbol": "DiscordAllowedMentionType.users",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 887,
       "symbol": "DiscordAllowedMentionType.everyone",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 893,
       "symbol": "DiscordAllowedMentions.CodingKeys",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 894,
       "symbol": "DiscordAllowedMentions.CodingKeys.parse",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 895,
       "symbol": "DiscordAllowedMentions.CodingKeys.roles",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 896,
       "symbol": "DiscordAllowedMentions.CodingKeys.users",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 897,
       "symbol": "DiscordAllowedMentions.CodingKeys.repliedUser",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 909,
       "symbol": "DiscordAllowedMentions.init(parse:roles:users:repliedUser:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 919,
       "symbol": "DiscordMessageReference.CodingKeys",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 920,
       "symbol": "DiscordMessageReference.CodingKeys.messageId",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 921,
       "symbol": "DiscordMessageReference.CodingKeys.channelId",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 922,
       "symbol": "DiscordMessageReference.CodingKeys.guildId",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 925,
       "symbol": "DiscordMessageReference.messageId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 926,
       "symbol": "DiscordMessageReference.channelId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 927,
       "symbol": "DiscordMessageReference.guildId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 929,
       "symbol": "DiscordMessageReference.init(messageId:channelId:guildId:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 938,
       "symbol": "DiscordMessageComponent.CodingKeys",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 939,
       "symbol": "DiscordMessageComponent.CodingKeys.type",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 940,
       "symbol": "DiscordMessageComponent.CodingKeys.components",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 941,
       "symbol": "DiscordMessageComponent.CodingKeys.style",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 942,
       "symbol": "DiscordMessageComponent.CodingKeys.label",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 943,
       "symbol": "DiscordMessageComponent.CodingKeys.emoji",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 944,
       "symbol": "DiscordMessageComponent.CodingKeys.customId",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 945,
       "symbol": "DiscordMessageComponent.CodingKeys.url",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 946,
       "symbol": "DiscordMessageComponent.CodingKeys.disabled",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 966,
       "symbol": "DiscordMessageComponent.init(type:components:style:label:emoji:customId:url:disabled:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1015,
       "symbol": "DiscordMessageComponentType",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1018,
       "symbol": "DiscordMessageComponentType.actionRow",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1019,
       "symbol": "DiscordMessageComponentType.button",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1028,
       "symbol": "DiscordMessageComponentEmoji.id",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1029,
       "symbol": "DiscordMessageComponentEmoji.name",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1030,
       "symbol": "DiscordMessageComponentEmoji.animated",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1032,
       "symbol": "DiscordMessageComponentEmoji.init(id:name:animated:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1039,
       "symbol": "DiscordMessageComponentButtonStyle",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1042,
       "symbol": "DiscordMessageComponentButtonStyle.primary",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1043,
       "symbol": "DiscordMessageComponentButtonStyle.secondary",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1044,
       "symbol": "DiscordMessageComponentButtonStyle.success",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1045,
       "symbol": "DiscordMessageComponentButtonStyle.danger",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1046,
       "symbol": "DiscordMessageComponentButtonStyle.link",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1053,
       "symbol": "DiscordMessageStickerFormatType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1054,
       "symbol": "DiscordMessageStickerFormatType.png",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1055,
       "symbol": "DiscordMessageStickerFormatType.apng",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1056,
       "symbol": "DiscordMessageStickerFormatType.lottie",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Channel/DiscordMessage.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Channel/DiscordMessage.swift",
       "line": 1059,
       "symbol": "DiscordMessageSticker",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Gateway/DiscordEvent.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Gateway/DiscordEvent.swift",
       "line": 133,
       "symbol": "DiscordDispatchEvent.applicationCommandCreate",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Gateway/DiscordEvent.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Gateway/DiscordEvent.swift",
       "line": 135,
       "symbol": "DiscordDispatchEvent.applicationCommandUpdate",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 6,
       "symbol": "DiscordApplicationCommand.CodingKeys",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 7,
       "symbol": "DiscordApplicationCommand.CodingKeys.id",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 8,
       "symbol": "DiscordApplicationCommand.CodingKeys.applicationId",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 9,
       "symbol": "DiscordApplicationCommand.CodingKeys.name",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 10,
       "symbol": "DiscordApplicationCommand.CodingKeys.description",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 11,
       "symbol": "DiscordApplicationCommand.CodingKeys.parameters",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 44,
       "symbol": "DiscordApplicationCommandOption",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 45,
       "symbol": "DiscordApplicationCommandOption.CodingKeys",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 46,
       "symbol": "DiscordApplicationCommandOption.CodingKeys.type",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 47,
       "symbol": "DiscordApplicationCommandOption.CodingKeys.name",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 48,
       "symbol": "DiscordApplicationCommandOption.CodingKeys.description",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 49,
       "symbol": "DiscordApplicationCommandOption.CodingKeys.isDefault",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 50,
       "symbol": "DiscordApplicationCommandOption.CodingKeys.isRequired",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 51,
       "symbol": "DiscordApplicationCommandOption.CodingKeys.choices",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 52,
       "symbol": "DiscordApplicationCommandOption.CodingKeys.options",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 78,
       "symbol": "DiscordApplicationCommandOption.init(type:name:description:isDefault:isRequired:choices:options:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 107,
       "symbol": "DiscordApplicationCommandOptionChoice",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 114,
       "symbol": "DiscordApplicationCommandOptionChoice.init(name:value:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 132,
       "symbol": "DiscordApplicationCommandOptionChoiceValue",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 133,
       "symbol": "DiscordApplicationCommandOptionChoiceValue.string(_:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 134,
       "symbol": "DiscordApplicationCommandOptionChoiceValue.int(_:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 147,
       "symbol": "DiscordApplicationCommandOptionType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 148,
       "symbol": "DiscordApplicationCommandOptionType.subCommand",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 149,
       "symbol": "DiscordApplicationCommandOptionType.subCommandGroup",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 150,
       "symbol": "DiscordApplicationCommandOptionType.string",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 151,
       "symbol": "DiscordApplicationCommandOptionType.integer",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 152,
       "symbol": "DiscordApplicationCommandOptionType.boolean",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 153,
       "symbol": "DiscordApplicationCommandOptionType.user",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 154,
       "symbol": "DiscordApplicationCommandOptionType.channel",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 155,
       "symbol": "DiscordApplicationCommandOptionType.role",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 163,
       "symbol": "DiscordApplicationCommandInteractionData",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordApplicationCommand.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 184,
       "symbol": "DiscordApplicationCommandInteractionDataOption",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteraction.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteraction.swift",
       "line": 50,
       "symbol": "DiscordInteractionType",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteraction.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteraction.swift",
       "line": 53,
       "symbol": "DiscordInteractionType.ping",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteraction.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteraction.swift",
       "line": 54,
       "symbol": "DiscordInteractionType.applicationCommand",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteraction.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteraction.swift",
       "line": 55,
       "symbol": "DiscordInteractionType.messageComponent",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteractionResponse.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteractionResponse.swift",
       "line": 3,
       "symbol": "DiscordInteractionResponse",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteractionResponse.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteractionResponse.swift",
       "line": 12,
       "symbol": "DiscordInteractionResponse.init(type:data:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteractionResponse.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteractionResponse.swift",
       "line": 21,
       "symbol": "DiscordInteractionResponseType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteractionResponse.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteractionResponse.swift",
       "line": 43,
       "symbol": "DiscordInteractionApplicationCommandCallbackData",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteractionResponse.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteractionResponse.swift",
       "line": 44,
       "symbol": "DiscordInteractionApplicationCommandCallbackData.CodingKeys",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteractionResponse.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteractionResponse.swift",
       "line": 45,
       "symbol": "DiscordInteractionApplicationCommandCallbackData.CodingKeys.tts",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteractionResponse.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteractionResponse.swift",
       "line": 46,
       "symbol": "DiscordInteractionApplicationCommandCallbackData.CodingKeys.content",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteractionResponse.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteractionResponse.swift",
       "line": 47,
       "symbol": "DiscordInteractionApplicationCommandCallbackData.CodingKeys.embeds",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteractionResponse.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteractionResponse.swift",
       "line": 48,
       "symbol": "DiscordInteractionApplicationCommandCallbackData.CodingKeys.allowedMentions",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteractionResponse.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteractionResponse.swift",
       "line": 51,
       "symbol": "DiscordInteractionApplicationCommandCallbackData.tts",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteractionResponse.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteractionResponse.swift",
       "line": 52,
       "symbol": "DiscordInteractionApplicationCommandCallbackData.content",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteractionResponse.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteractionResponse.swift",
       "line": 53,
       "symbol": "DiscordInteractionApplicationCommandCallbackData.embeds",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteractionResponse.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteractionResponse.swift",
       "line": 54,
       "symbol": "DiscordInteractionApplicationCommandCallbackData.allowedMentions",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Interaction/DiscordInteractionResponse.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordInteractionResponse.swift",
       "line": 56,
       "symbol": "DiscordInteractionApplicationCommandCallbackData.init(tts:content:embeds:allowedMentions:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Rest/DiscordEndpoint.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Rest/DiscordEndpoint.swift",
       "line": 157,
       "symbol": "DiscordEndpoint.guildEmojis(guild:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Rest/DiscordEndpoint.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Rest/DiscordEndpoint.swift",
       "line": 160,
       "symbol": "DiscordEndpoint.guildEmoji(guild:emoji:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Rest/DiscordEndpoint.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Rest/DiscordEndpoint.swift",
       "line": 179,
       "symbol": "DiscordEndpoint.interactionsCallback(interactionId:interactionToken:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Rest/DiscordEndpointConsumer+Emoji.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Rest/DiscordEndpointConsumer+Emoji.swift",
       "line": 11,
       "symbol": "DiscordEndpointConsumer.createGuildEmoji(on:name:image:roles:callback:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Rest/DiscordEndpointConsumer+Emoji.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Rest/DiscordEndpointConsumer+Emoji.swift",
       "line": 40,
       "symbol": "DiscordEndpointConsumer.getGuildEmojis(on:callback:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Rest/DiscordEndpointConsumer+Emoji.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Rest/DiscordEndpointConsumer+Emoji.swift",
       "line": 59,
       "symbol": "DiscordEndpointConsumer.getGuildEmoji(on:for:callback:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Rest/DiscordEndpointConsumer+Emoji.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Rest/DiscordEndpointConsumer+Emoji.swift",
       "line": 78,
       "symbol": "DiscordEndpointConsumer.deleteGuildEmoji(on:for:callback:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/SwiftDiscord/Voice/DiscordVoiceEngine.swift",
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Voice/DiscordVoiceEngine.swift",
       "line": 115,
       "symbol": "DiscordVoiceEngine.udpIp",
       "symbol_kind": "source.lang.swift.decl.var.instance",
