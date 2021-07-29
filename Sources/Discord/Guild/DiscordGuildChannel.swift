@@ -157,9 +157,26 @@ func guildChannel(fromObject channelObject: [String: Any],
     case .category:
         return DiscordGuildChannelCategory(categoryObject: channelObject, guildID: guildID, client: client)
     default:
-        logger.error("Unhandled guild channel in guildChannelFromObject")
+        logger.error("Unhandled guild channel type in guildChannelFromObject")
         return nil
     }
+}
+
+func guildThread(fromObject threadObject: [String: Any],
+                 guildID: GuildID?,
+                 client: DiscordClient? = nil) -> DiscordGuildChannel? {
+    guard let typeInt = threadObject["type"] as? Int,
+          let type = DiscordChannelType(rawValue: typeInt) else {
+        return nil
+    }
+
+    switch type {
+    case .publicThread, .privateThread, .newsThread:
+        return DiscordGuildThreadChannel(guildThreadObject: threadObject, guildID: guildID, client: client)
+    default:
+        logger.error("Unhandled guild thread channel type in guildChannelFromObject")
+        return nil
+    }   
 }
 
 func guildChannels(fromArray guildChannelArray: [[String: Any]],
@@ -223,6 +240,61 @@ public struct DiscordGuildTextChannel : DiscordTextChannel, DiscordGuildChannel 
         topic = guildChannelObject.get("topic", or: "")
         parentId = Snowflake(guildChannelObject.get("parent_id", or: ""))
         nsfw = guildChannelObject.get("nsfw", or: false)
+        self.client = client
+    }
+}
+
+/// Represents a guild thread channel.
+public struct DiscordGuildThreadChannel : DiscordTextChannel, DiscordGuildChannel {
+    // MARK: Guild Text Channel Properties
+
+    /// The snowflake id of the channel.
+    public let id: ChannelID
+
+    /// The snowflake id of the guild this channel is on.
+    public let guildId: GuildID
+
+    /// Reference to the client.
+    public weak var client: DiscordClient?
+
+    /// The last message received on this channel.
+    ///
+    /// **NOTE** Currently is not being updated.
+    public var lastMessageId: MessageID
+
+    /// The name of this channel.
+    public var name: String
+
+    /// The channel this thread was created in.
+    public var parentId: ChannelID?
+
+    /// The user that created this thread.
+    public var ownerId: UserID?
+
+    /// The permissions specifics to this channel.
+    public var permissionOverwrites: [OverwriteID: DiscordPermissionOverwrite]
+
+    /// The position of this channel. Mostly for UI purpose.
+    public var position: Int
+
+    /// The topic of this channel, if this is a text channel.
+    public var topic: String
+
+    /// If this channel is NSFW
+    public var nsfw: Bool
+    
+    init(guildThreadObject: [String: Any], guildID: GuildID?, client: DiscordClient? = nil) {
+        id = Snowflake(guildThreadObject["id"] as? String) ?? 0
+        guildId = guildID ?? Snowflake(guildThreadObject["guild_id"] as? String) ?? 0
+        lastMessageId = Snowflake(guildThreadObject["last_message_id"] as? String) ?? 0
+        name = guildThreadObject.get("name", or: "")
+        permissionOverwrites = DiscordPermissionOverwrite.overwritesFromArray(
+            guildThreadObject.get("permission_overwrites", or: JSONArray()))
+        position = guildThreadObject.get("position", or: 0)
+        topic = guildThreadObject.get("topic", or: "")
+        parentId = Snowflake(guildThreadObject.get("parent_id", or: ""))
+        ownerId = Snowflake(guildThreadObject.get("owner_id", or: ""))
+        nsfw = guildThreadObject.get("nsfw", or: false)
         self.client = client
     }
 }

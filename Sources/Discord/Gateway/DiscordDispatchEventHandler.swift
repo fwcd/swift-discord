@@ -166,4 +166,39 @@ public protocol DiscordDispatchEventHandler {
 	/// - parameter with: The data from the event
 	///
 	func handleVoiceStateUpdate(with data: [String: Any])
+
+    ///
+    /// Handles thread creations from Discord.
+    ///
+    /// - parameter with: The data from the event
+    ///
+    func handleThreadCreate(with data: [String: Any])
+
+    ///
+    /// Handles thread updates from Discord.
+    ///
+    /// - parameter with: The data from the event
+    ///
+    func handleThreadUpdate(with data: [String: Any])
+
+    ///
+    /// Handles thread deletions from Discord.
+    ///
+    /// - parameter with: The data from the event
+    ///
+    func handleThreadDelete(with data: [String: Any])
+
+    ///
+    /// Handles thread member updates from Discord.
+    ///
+    /// - parameter with: The data from the event
+    ///
+    func handleThreadMemberUpdate(with data: [String: Any])
+
+    ///
+    /// Handles thread member updates from Discord.
+    ///
+    /// - parameter with: The data from the event
+    ///
+    func handleThreadMembersUpdate(with data: [String: Any])
 }

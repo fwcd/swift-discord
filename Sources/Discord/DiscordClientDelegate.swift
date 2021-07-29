@@ -63,6 +63,30 @@ public protocol DiscordClientDelegate : AnyObject {
     func client(_ client: DiscordClient, didUpdateChannel channel: DiscordChannel)
 
     ///
+    /// Called when the client creates a new thread.
+    ///
+    /// - parameter client: The client that is calling.
+    /// - parameter didCreateThread: The thread channel that was created.
+    ///
+    func client(_ client: DiscordClient, didCreateThread channel: DiscordChannel)
+
+    ///
+    /// Called when the client deletes a thread.
+    ///
+    /// - parameter client: The client that is calling.
+    /// - parameter didDeleteThread: The thread channel that was deleted.
+    ///
+    func client(_ client: DiscordClient, didDeleteThread channel: DiscordChannel)
+
+    ///
+    /// Called when the client updates a thread.
+    ///
+    /// - parameter client: The client that is calling.
+    /// - parameter didUpdateThread: The thread channel that was updated.
+    ///
+    func client(_ client: DiscordClient, didUpdateThread channel: DiscordChannel)
+
+    ///
     /// Called when the client creates a new guild.
     ///
     /// - parameter client: The client that is calling.
@@ -309,6 +333,15 @@ public extension DiscordClientDelegate {
 
     /// Default.
     func client(_ client: DiscordClient, didUpdateChannel channel: DiscordChannel) { }
+
+    /// Default.
+    func client(_ client: DiscordClient, didCreateThread channel: DiscordChannel) { }
+
+    /// Default.
+    func client(_ client: DiscordClient, didDeleteThread channel: DiscordChannel) { }
+
+    /// Default.
+    func client(_ client: DiscordClient, didUpdateThread channel: DiscordChannel) { }
 
     /// Default.
     func client(_ client: DiscordClient, didCreateGuild guild: DiscordGuild) { }

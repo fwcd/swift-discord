@@ -966,6 +966,91 @@ open class DiscordClient : DiscordClientSpec, DiscordDispatchEventHandler, Disco
     }
 
     ///
+    /// Handles thread creations from Discord.
+    ///
+    /// Calls the `didCreateThread` delegate method.
+    ///
+    /// - parameter with: The data from the event
+    ///
+    open func handleThreadCreate(with data: [String: Any]) {
+        logger.info("Handling thread create")
+
+        guard let thread = channelFromObject(data, withClient: self) as? DiscordGuildChannel else { return }
+
+        guilds[thread.guildId]?.threads[thread.id] = thread
+
+        delegate?.client(self, didCreateThread: thread)
+    }
+
+    ///
+    /// Handles thread updates from Discord.
+    ///
+    /// Calls the `didUpdateThread` delegate method.
+    ///
+    /// - parameter with: The data from the event
+    ///
+    open func handleThreadUpdate(with data: [String: Any]) {
+        logger.info("Handling thread update")
+
+        guard let thread = guildThread(fromObject: data, guildID: nil, client: self) else { return }
+
+        logger.debug("(verbose) Updated thread channel: \(thread)")
+
+        guilds[thread.guildId]?.threads[thread.id] = thread
+
+        channelCache.removeValue(forKey: thread.id)
+
+        delegate?.client(self, didUpdateThread: thread)
+    }
+
+    ///
+    /// Handles thread deletions from Discord.
+    ///
+    /// Calls the `didDeleteThread` delegate method.
+    ///
+    /// - parameter with: The data from the event
+    ///
+    open func handleThreadDelete(with data: [String: Any]) {
+        logger.info("Handling thread delete")
+
+        guard let channelId = Snowflake(data["id"] as? String),
+              let guildId = Snowflake(data["guild_id"] as? String),
+              let thread = guilds[guildId]?.threads.removeValue(forKey: channelId) else { return }
+
+        logger.debug("(verbose) Updated thread channel: \(thread)")
+
+        guilds[thread.guildId]?.threads[thread.id] = thread
+
+        channelCache.removeValue(forKey: thread.id)
+
+        logger.debug("(verbose) Removed thread channel: \(thread)")
+
+        delegate?.client(self, didDeleteThread: thread)
+    }
+
+    ///
+    /// Handles thread member updates from Discord.
+    ///
+    /// - parameter with: The data from the event
+    ///
+    open func handleThreadMemberUpdate(with data: [String: Any]) {
+        logger.info("Handling thread member update")
+
+        // FIXME: Implement this!
+    }
+
+    ///
+    /// Handles thread member updates from Discord.
+    ///
+    /// - parameter with: The data from the event
+    ///
+    open func handleThreadMembersUpdate(with data: [String: Any]) {
+        logger.info("Handling thread members update")
+
+        // FIXME: Implement this!
+    }
+
+    ///
     /// Handles the ready event from Discord. You shouldn't need to call this method directly.
     ///
     /// Override to provide additional customization around this event.
