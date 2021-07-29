@@ -68,7 +68,7 @@ public protocol DiscordClientDelegate : AnyObject {
     /// - parameter client: The client that is calling.
     /// - parameter didCreateThread: The thread channel that was created.
     ///
-    func client(_ client: DiscordClient, didCreateThread channel: DiscordChannel)
+    func client(_ client: DiscordClient, didCreateThread thread: DiscordThreadChannel)
 
     ///
     /// Called when the client deletes a thread.
@@ -76,7 +76,7 @@ public protocol DiscordClientDelegate : AnyObject {
     /// - parameter client: The client that is calling.
     /// - parameter didDeleteThread: The thread channel that was deleted.
     ///
-    func client(_ client: DiscordClient, didDeleteThread channel: DiscordChannel)
+    func client(_ client: DiscordClient, didDeleteThread thread: DiscordThreadChannel)
 
     ///
     /// Called when the client updates a thread.
@@ -84,7 +84,7 @@ public protocol DiscordClientDelegate : AnyObject {
     /// - parameter client: The client that is calling.
     /// - parameter didUpdateThread: The thread channel that was updated.
     ///
-    func client(_ client: DiscordClient, didUpdateThread channel: DiscordChannel)
+    func client(_ client: DiscordClient, didUpdateThread thread: DiscordThreadChannel)
 
     ///
     /// Called when the client creates a new guild.
@@ -335,13 +335,13 @@ public extension DiscordClientDelegate {
     func client(_ client: DiscordClient, didUpdateChannel channel: DiscordChannel) { }
 
     /// Default.
-    func client(_ client: DiscordClient, didCreateThread channel: DiscordChannel) { }
+    func client(_ client: DiscordClient, didCreateThread thread: DiscordThreadChannel) { }
 
     /// Default.
-    func client(_ client: DiscordClient, didDeleteThread channel: DiscordChannel) { }
+    func client(_ client: DiscordClient, didDeleteThread thread: DiscordThreadChannel) { }
 
     /// Default.
-    func client(_ client: DiscordClient, didUpdateThread channel: DiscordChannel) { }
+    func client(_ client: DiscordClient, didUpdateThread thread: DiscordThreadChannel) { }
 
     /// Default.
     func client(_ client: DiscordClient, didCreateGuild guild: DiscordGuild) { }
