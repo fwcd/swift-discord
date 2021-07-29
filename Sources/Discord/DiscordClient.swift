@@ -975,7 +975,7 @@ open class DiscordClient : DiscordClientSpec, DiscordDispatchEventHandler, Disco
     open func handleThreadCreate(with data: [String: Any]) {
         logger.info("Handling thread create")
 
-        guard let thread = channelFromObject(data, withClient: self) as? DiscordGuildChannel else { return }
+        guard let thread = channelFromObject(data, withClient: self) as? DiscordThreadChannel else { return }
 
         guilds[thread.guildId]?.threads[thread.id] = thread
 

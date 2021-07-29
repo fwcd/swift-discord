@@ -207,8 +207,7 @@ func channelFromObject(_ object: [String: Any], withClient client: DiscordClient
     case .groupDM:       return DiscordGroupDMChannel(dmReadyObject: object, client: client)
     case .category:      return DiscordGuildChannelCategory(categoryObject: object, guildID: nil, client: client)
     case .publicThread,
-         .privateThread,
-         .newsThread:    return DiscordGuildThreadChannel(guildThreadObject: object, guildID: nil, client: client)
+         .privateThread: return DiscordThreadChannel(threadObject: object, guildID: nil, client: client)
     default:
         logger.warning("Could not create channel from unhandled type \(type)")
         return nil

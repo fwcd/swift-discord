@@ -15,6 +15,7 @@
 // ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+import Foundation
 import Logging
 
 fileprivate let logger = Logger(label: "DiscordGuildChannel")
@@ -164,7 +165,7 @@ func guildChannel(fromObject channelObject: [String: Any],
 
 func guildThread(fromObject threadObject: [String: Any],
                  guildID: GuildID?,
-                 client: DiscordClient? = nil) -> DiscordGuildChannel? {
+                 client: DiscordClient? = nil) -> DiscordThreadChannel? {
     guard let typeInt = threadObject["type"] as? Int,
           let type = DiscordChannelType(rawValue: typeInt) else {
         return nil
@@ -172,9 +173,9 @@ func guildThread(fromObject threadObject: [String: Any],
 
     switch type {
     case .publicThread, .privateThread, .newsThread:
-        return DiscordGuildThreadChannel(guildThreadObject: threadObject, guildID: guildID, client: client)
+        return DiscordThreadChannel(threadObject: threadObject, guildID: guildID, client: client)
     default:
-        logger.error("Unhandled guild thread channel type in guildChannelFromObject")
+        logger.error("Unhandled thread channel type in guildChannelFromObject")
         return nil
     }   
 }
@@ -182,15 +183,17 @@ func guildThread(fromObject threadObject: [String: Any],
 func guildChannels(fromArray guildChannelArray: [[String: Any]],
                    guildID: GuildID?,
                    client: DiscordClient? = nil) -> [ChannelID: DiscordGuildChannel] {
-    var guildChannels = [ChannelID: DiscordGuildChannel]()
+    Dictionary(uniqueKeysWithValues: guildChannelArray
+        .compactMap { guildChannel(fromObject: $0, guildID: guildID, client: client) }
+        .map { ($0.id, $0) })
+}
 
-    for guildChannel in guildChannelArray.compactMap({ return guildChannel(fromObject: $0,
-                                                                           guildID: guildID,
-                                                                           client: client) }) {
-        guildChannels[guildChannel.id] = guildChannel
-    }
-
-    return guildChannels
+func guildThreads(fromArray threadArray: [[String: Any]],
+                  guildID: GuildID?,
+                  client: DiscordClient? = nil) -> [ChannelID: DiscordThreadChannel] {
+    Dictionary(uniqueKeysWithValues: threadArray
+        .compactMap { guildThread(fromObject: $0, guildID: guildID, client: client) }
+        .map { ($0.id, $0) })
 }
 
 /// Represents a guild channel.
@@ -244,8 +247,8 @@ public struct DiscordGuildTextChannel : DiscordTextChannel, DiscordGuildChannel 
     }
 }
 
-/// Represents a guild thread channel.
-public struct DiscordGuildThreadChannel : DiscordTextChannel, DiscordGuildChannel {
+/// Represents a thread channel.
+public struct DiscordThreadChannel : DiscordTextChannel {
     // MARK: Guild Text Channel Properties
 
     /// The snowflake id of the channel.
@@ -271,31 +274,48 @@ public struct DiscordGuildThreadChannel : DiscordTextChannel, DiscordGuildChanne
     /// The user that created this thread.
     public var ownerId: UserID?
 
-    /// The permissions specifics to this channel.
-    public var permissionOverwrites: [OverwriteID: DiscordPermissionOverwrite]
+    /// Thread-specific metadata.
+    public var threadMetadata: DiscordThreadMetadata?
 
-    /// The position of this channel. Mostly for UI purpose.
-    public var position: Int
+    /// An approximate message count, stops counting at 50.
+    public var messageCount: Int
 
-    /// The topic of this channel, if this is a text channel.
-    public var topic: String
+    /// An approximate member count, stops counting at 50.
+    public var memberCount: Int
 
-    /// If this channel is NSFW
-    public var nsfw: Bool
-    
-    init(guildThreadObject: [String: Any], guildID: GuildID?, client: DiscordClient? = nil) {
-        id = Snowflake(guildThreadObject["id"] as? String) ?? 0
-        guildId = guildID ?? Snowflake(guildThreadObject["guild_id"] as? String) ?? 0
-        lastMessageId = Snowflake(guildThreadObject["last_message_id"] as? String) ?? 0
-        name = guildThreadObject.get("name", or: "")
-        permissionOverwrites = DiscordPermissionOverwrite.overwritesFromArray(
-            guildThreadObject.get("permission_overwrites", or: JSONArray()))
-        position = guildThreadObject.get("position", or: 0)
-        topic = guildThreadObject.get("topic", or: "")
-        parentId = Snowflake(guildThreadObject.get("parent_id", or: ""))
-        ownerId = Snowflake(guildThreadObject.get("owner_id", or: ""))
-        nsfw = guildThreadObject.get("nsfw", or: false)
+    init(threadObject: [String: Any], guildID: GuildID?, client: DiscordClient? = nil) {
+        id = Snowflake(threadObject["id"] as? String) ?? 0
+        guildId = guildID ?? Snowflake(threadObject["guild_id"] as? String) ?? 0
+        lastMessageId = Snowflake(threadObject["last_message_id"] as? String) ?? 0
+        name = threadObject.get("name", or: "")
+        parentId = Snowflake(threadObject.get("parent_id", or: ""))
+        ownerId = Snowflake(threadObject.get("owner_id", or: ""))
+        threadMetadata = (threadObject["thread_metadata"] as? [String: Any]).map(DiscordThreadMetadata.init(metadataObject:))
+        messageCount = threadObject.get("message_count", or: 0)
+        memberCount = threadObject.get("member_count", or: 0)
         self.client = client
+    }
+}
+
+/// Thread-specific metadata.
+public struct DiscordThreadMetadata {
+    /// Whether the thread is archived.
+    public let archived: Bool
+
+    /// Duration in minutes to automatically archive the thread after recent activity.
+    public let autoArchiveDuration: Int
+
+    /// Timestamp when the thread's archive status was last changed.
+    public let archiveTimestamp: Date
+
+    /// Whether the thread is locked, so only users with MANAGE_THREADS can unarchive it.
+    public let locked: Bool?
+
+    init(metadataObject: [String: Any]) {
+        archived = metadataObject.get("archived", or: false)
+        autoArchiveDuration = metadataObject.get("auto_archive_duration", or: 0)
+        archiveTimestamp = DiscordDateFormatter.format(metadataObject.get("archive_timestamp", or: "")) ?? Date()
+        locked = metadataObject["locked"] as? Bool
     }
 }
 

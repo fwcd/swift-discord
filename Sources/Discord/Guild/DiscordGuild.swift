@@ -62,7 +62,7 @@ public final class DiscordGuild : DiscordClientHolder, CustomStringConvertible {
     public internal(set) var channels: [ChannelID: DiscordGuildChannel]
 
     /// A dictionary of this guild's active threads. The key is the snowflake id of the channel.
-    public internal(set) var threads: [ChannelID: DiscordGuildChannel]
+    public internal(set) var threads: [ChannelID: DiscordThreadChannel]
 
     /// A dictionary of this guild's emojis. The key is the snowflake id of the emoji.
     public internal(set) var emojis: [EmojiID: DiscordEmoji]
@@ -115,7 +115,7 @@ public final class DiscordGuild : DiscordClientHolder, CustomStringConvertible {
     init(guildObject: [String: Any], client: DiscordClient?) {
         id = guildObject.getSnowflake()
         channels = guildChannels(fromArray: guildObject.get("channels", or: JSONArray()), guildID: id, client: client)
-        threads = guildChannels(fromArray: guildObject.get("threads", or: JSONArray()), guildID: id, client: client)
+        threads = guildThreads(fromArray: guildObject.get("threads", or: JSONArray()), guildID: id, client: client)
         defaultMessageNotifications = guildObject.get("default_message_notifications", or: -1)
         widgetEnabled = guildObject.get("widget_enabled", or: false)
         widgetChannelId = guildObject.getSnowflake(key: "widget_channel_id")
