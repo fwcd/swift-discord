@@ -158,7 +158,7 @@ func guildChannel(fromObject channelObject: [String: Any],
     case .category:
         return DiscordGuildChannelCategory(categoryObject: channelObject, guildID: guildID, client: client)
     default:
-        logger.error("Unhandled guild channel type in guildChannelFromObject")
+        logger.warning("Unhandled guild channel type \(type) in \(#function)")
         return nil
     }
 }
