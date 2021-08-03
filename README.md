@@ -21,7 +21,7 @@ class Bot: DiscordClientDelegate {
 
     func client(_ client: DiscordClient, didCreateMessage message: DiscordMessage) {
         if message.content == "ping" {
-            message.channel?.send("pong")
+            client.sendMessage("pong", to: message.channelId)
         }
     }
 }
