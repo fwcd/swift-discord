@@ -55,8 +55,20 @@ public enum DiscordEndpoint: CustomStringConvertible {
     /// Same as channelMessage, separate for rate limiting purposes
     case channelMessageDelete(channel: ChannelID, message: MessageID)
 
+    /// The non-message-specific threads endpoint.
+    case channelThreads(channel: ChannelID)
+
+    /// The message-specific threads endpoint.
+    case channelMessageThreads(channel: ChannelID, message: MessageID)
+
     /// The channel typing endpoint.
     case typing(channel: ChannelID)
+
+    /// The own thread member endpoint.
+    case threadMember(channel: ChannelID)
+
+    /// The thread member endpoint for another user.
+    case userThreadMember(channel: ChannelID, user: UserID)
 
     // Reactions
     /// The endpoint for creating/deleting own reactions.
@@ -308,8 +320,16 @@ public extension DiscordEndpoint {
             return "/channels/\(channel)/messages/\(message)"
         case let .channelMessageDelete(channel, message):
             return "/channels/\(channel)/messages/\(message)"
+        case let .channelMessageThreads(channel, message):
+            return "/channels/\(channel)/messages/\(message)/threads"
+        case let .channelThreads(channel):
+            return "/channels/\(channel)/threads"
         case let .typing(channel):
             return "/channels/\(channel)/typing"
+        case let .threadMember(channel):
+            return "/channels/\(channel)/thread-members/@me"
+        case let .userThreadMember(channel, user):
+            return "/channels/\(channel)/thread-members/\(user)"
         // Reactions
         case let .reactions(channel, message, emoji):
             return "/channels/\(channel)/messages/\(message)/reactions/\(emoji)/@me"
@@ -436,6 +456,15 @@ public extension DiscordEndpoint {
             return DiscordRateLimitKey(id: channel, urlParts: [.channels, .channelID, .messagesDelete, .messageID])
         case let .typing(channel):
             return DiscordRateLimitKey(id: channel, urlParts: [.channels, .channelID, .typing])
+        // Threads
+        case let .channelMessageThreads(channel, _):
+            return DiscordRateLimitKey(id: channel, urlParts: [.channels, .channelID, .messages, .messageID, .threads])
+        case let .channelThreads(channel):
+            return DiscordRateLimitKey(id: channel, urlParts: [.channels, .channelID, .threads])
+        case let .threadMember(channel):
+            return DiscordRateLimitKey(id: channel, urlParts: [.channels, .channelID, .threadMembers, .me])
+        case let .userThreadMember(channel, _):
+            return DiscordRateLimitKey(id: channel, urlParts: [.channels, .channelID, .threadMembers, .userID])
         // Reactions
         case let .reactions(channel, _, _):
             return DiscordRateLimitKey(id: channel, urlParts: [.channels, .channelID, .messages, .messageID, .reactions, .emoji, .me])
@@ -882,6 +911,51 @@ public extension DiscordEndpoint {
 
             /// The avatar of the webhook. A base64 128x128 jpeg image.
             case avatar(String)
+        }
+
+        /// Options for creating a message-attached thread.
+        public struct StartThreadWithMessage: Codable {
+            public enum CodingKeys: String, CodingKey {
+                case name
+                case autoArchiveDuration = "auto_archive_duration"
+            }
+
+            /// 1-100 char channel name
+            public let name: String
+
+            /// Duration in minutes to automatically archive the thread after
+            /// recent activity, can be set to 60, 1440, 4320, 10080
+            public let autoArchiveDuration: Int?
+
+            public init(name: String, autoArchiveDuration: Int? = nil) {
+                self.name = name
+                self.autoArchiveDuration = autoArchiveDuration
+            }
+        }
+
+        /// Options for creating a non-message-attached thread.
+        public struct StartThread: Codable {
+            public enum CodingKeys: String, CodingKey {
+                case name
+                case autoArchiveDuration = "auto_archive_duration"
+                case type
+            }
+
+            /// 1-100 char channel name
+            public let name: String
+
+            /// Duration in minutes to automatically archive the thread after
+            /// recent activity, can be set to 60, 1440, 4320, 10080
+            public let autoArchiveDuration: Int?
+
+            /// The type of thread to create.
+            public let type: DiscordChannelType?
+
+            public init(name: String, autoArchiveDuration: Int? = nil, type: DiscordChannelType? = nil) {
+                self.name = name
+                self.autoArchiveDuration = autoArchiveDuration
+                self.type = type
+            }
         }
     }
 }
