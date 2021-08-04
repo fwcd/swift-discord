@@ -803,7 +803,7 @@
 
     <span class="kd">func</span> <span class="nf">client</span><span class="p">(</span><span class="n">_</span> <span class="nv">client</span><span class="p">:</span> <span class="kt">DiscordClient</span><span class="p">,</span> <span class="n">didCreateMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">DiscordMessage</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">content</span> <span class="o">==</span> <span class="s">"ping"</span> <span class="p">{</span>
-            <span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="p">?</span><span class="o">.</span><span class="nf">send</span><span class="p">(</span><span class="s">"pong"</span><span class="p">)</span>
+            <span class="n">client</span><span class="o">.</span><span class="nf">sendMessage</span><span class="p">(</span><span class="s">"pong"</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="n">message</span><span class="o">.</span><span class="n">channelId</span><span class="p">)</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
