@@ -64,12 +64,8 @@ public struct DiscordGatewayCloseReason: RawRepresentable, Codable {
     }
 
     init?(error: Error?) {
-        #if !os(Linux)
         guard let error = error else { return nil }
 
-        self.init(rawValue: (error as NSError).opcode)
-        #else
-        self = .unknown
-        #endif
+        self.init(rawValue: (error as NSError).code)
     }
 }

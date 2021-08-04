@@ -23,37 +23,33 @@ import FoundationNetworking
 
 import Dispatch
 
+private struct DiscordGatewayInfo: Codable {
+    let url: URL
+}
+
+private let gatewaySemaphore = DispatchSemaphore(value: 0)
+
 struct DiscordEndpointGateway {
     static var gatewayURL = getURL()
 
-    private static var gatewaySemaphore = DispatchSemaphore(value: 0)
-
-    static func getURL() -> String {
-        // Linux's urlsession is busted
-        #if os(Linux)
-        return "wss://gateway.discord.gg"
-        #else
+    static func getURL() -> URL {
         var request = URLRequest(url: URL(string: "https://discord.com/api/gateway")!)
-
         request.httpMethod = "GET"
 
-        var url = "wss://gateway.discord.gg"
+        var url = URL(string: "wss://gateway.discord.gg")!
 
-        URLSession.shared.dataTask(with: request) {data, response, error in
-            guard let data = data, let stringData = String(data: data, encoding: .utf8),
-                  case let .object(info)? = JSON.decodeJSON(stringData),
-                  let gateway = info["url"] as? String else {
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, let info: DiscordGatewayInfo = try? DiscordJSON.decode(data) else {
                 gatewaySemaphore.signal()
                 return
             }
 
-            url = gateway
+            url = info.url
             gatewaySemaphore.signal()
         }.resume()
 
         gatewaySemaphore.wait()
 
         return url
-        #endif
     }
 }
