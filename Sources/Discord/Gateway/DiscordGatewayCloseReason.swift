@@ -16,44 +16,52 @@
 // ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+import Foundation
+
 /// Represents the reason a gateway was closed.
-public enum DiscordGatewayCloseReason: Int, Codable {
+public struct DiscordGatewayCloseReason: RawRepresentable, Codable {
+    public var rawValue: Int
+
     /// We don't quite know why the gateway closed.
-    case unknown = 0
+    public static let unknown = DiscordGatewayCloseReason(rawValue: 0)
     /// The gateway closed because the network dropped.
-    case noNetwork = 50
+    public static let noNetwork = DiscordGatewayCloseReason(rawValue: 50)
     /// The gateway closed from a normal WebSocket close event.
-    case normal = 1000
+    public static let normal = DiscordGatewayCloseReason(rawValue: 1000)
     /// Something went wrong, but we aren't quite sure either.
-    case unknownError = 4000
+    public static let unknownError = DiscordGatewayCloseReason(rawValue: 4000)
     /// Discord got an opcode is doesn't recognize.
-    case unknownOpcode = 4001
+    public static let unknownOpcode = DiscordGatewayCloseReason(rawValue: 4001)
     /// We sent a payload Discord doesn't know what to do with.
-    case decodeError = 4002
+    public static let decodeError = DiscordGatewayCloseReason(rawValue: 4002)
     /// We tried to send stuff before we were authenticated.
-    case notAuthenticated = 4003
+    public static let notAuthenticated = DiscordGatewayCloseReason(rawValue: 4003)
     /// We failed to authenticate with Discord.
-    case authenticationFailed = 4004
+    public static let authenticationFailed = DiscordGatewayCloseReason(rawValue: 4004)
     /// We tried to authenticate twice.
-    case alreadyAuthenticated = 4005
+    public static let alreadyAuthenticated = DiscordGatewayCloseReason(rawValue: 4005)
     /// We sent a bad sequence number when trying to resume.
-    case invalidSequence = 4007
+    public static let invalidSequence = DiscordGatewayCloseReason(rawValue: 4007)
     /// We sent messages too fast.
-    case rateLimited = 4008
+    public static let rateLimited = DiscordGatewayCloseReason(rawValue: 4008)
     /// Our session timed out.
-    case sessionTimeout = 4009
+    public static let sessionTimeout = DiscordGatewayCloseReason(rawValue: 4009)
     /// We sent an invalid shard when identifing.
-    case invalidShard = 4010
+    public static let invalidShard = DiscordGatewayCloseReason(rawValue: 4010)
     /// We sent a protocol Discord doesn't recognize.
-    case unknownProtocol = 4012
+    public static let unknownProtocol = DiscordGatewayCloseReason(rawValue: 4012)
     /// We got disconnected.
-    case disconnected = 4014
+    public static let disconnected = DiscordGatewayCloseReason(rawValue: 4014)
     /// The voice server crashed.
-    case voiceServerCrash = 4015
+    public static let voiceServerCrash = DiscordGatewayCloseReason(rawValue: 4015)
     /// We sent an encryption mode Discord doesn't know.
-    case unknownEncryptionMode = 4016
+    public static let unknownEncryptionMode = DiscordGatewayCloseReason(rawValue: 4016)
 
     // MARK: Initializers
+
+    public init(rawValue: Int) {
+        self.rawValue = rawValue
+    }
 
     init?(error: Error?) {
         #if !os(Linux)
