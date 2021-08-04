@@ -1,6 +1,7 @@
 # Discord Client for Swift
 
 [![Linux](https://github.com/fwcd/swift-discord/actions/workflows/linux.yml/badge.svg)](https://github.com/fwcd/swift-discord/actions/workflows/linux.yml)
+[![macOS](https://github.com/fwcd/swift-discord/actions/workflows/mac.yml/badge.svg)](https://github.com/fwcd/swift-discord/actions/workflows/mac.yml)
 [![Docs](https://github.com/fwcd/swift-discord/actions/workflows/docs.yml/badge.svg)](https://fwcd.github.io/swift-discord)
 
 A Discord API client library for Swift.
