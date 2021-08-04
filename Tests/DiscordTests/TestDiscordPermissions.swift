@@ -97,9 +97,9 @@ public class TestDiscordPermissions: XCTestCase {
     }
 }
 
-let permissionsTestUsers = ["23416345", "32564235", "4359835345", "32499342123", "234234120985"].map({ id -> DiscordUser in
+let permissionsTestUsers = [23416345, 32564235, 4359835345, 32499342123, 234234120985].map({ (id: UInt64) -> DiscordUser in
     var tmp = testUser
-    tmp.id = .init(id)!
+    tmp.id = UserID(rawValue: id)
     return tmp
 })
 

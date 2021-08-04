@@ -156,7 +156,7 @@ func createEmojiObjects(n: Int) -> [DiscordEmoji] {
     for i in 0..<n {
         var emoji = testEmoji
 
-        emoji.id = .init("500\(i)")!
+        emoji.id = EmojiID("500\(i)")!
         emoji.name = "Custom emoji \(i)"
 
         emojis.append(emoji)
