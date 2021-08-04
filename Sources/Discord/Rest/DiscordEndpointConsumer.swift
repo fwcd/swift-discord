@@ -280,7 +280,7 @@ public protocol DiscordEndpointConsumer {
                        callback: ((Bool, HTTPURLResponse?) -> ())?)
 
     ///
-    /// Creates a new public thread from an existing message.
+    /// Creates a new thread from an existing message.
     ///
     /// - parameter in: The id of the channel to create a thread in
     /// - parameter options: The parameters of the thread to be created
@@ -294,7 +294,7 @@ public protocol DiscordEndpointConsumer {
                      callback: ((DiscordChannel?, HTTPURLResponse?) -> ())?)
 
     ///
-    /// Creates a new public thread without an initial message.
+    /// Creates a new thread without an initial message.
     ///
     /// - parameter in: The id of the channel to create a thread in
     /// - parameter options: The parameters of the thread to be created
