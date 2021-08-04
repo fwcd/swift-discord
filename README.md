@@ -31,6 +31,8 @@ let bot = Bot()
 dispatchMain()
 ```
 
+Check out the [Getting Started](UsageDocs/Getting%20Started.md) page for a quickstart guide.
+
 ## Features
 
 - macOS and Linux support
@@ -40,14 +42,7 @@ dispatchMain()
 ## Requirements
 
 - Swift 5+
-- `libopus`
-- `libsodium`
-- Recommended: `ffmpeg` (Without FFmpeg you must send raw audio)
 
 ## Building
 
 `swift build`
-
-## Usage
-
-Checkout the [getting started](https://nuclearace.github.io/SwiftDiscord/getting-started.html) page for a quickstart guide.
