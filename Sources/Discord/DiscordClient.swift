@@ -562,11 +562,11 @@ public class DiscordClient: DiscordShardManagerDelegate, DiscordUserActor, Disco
         guild.memberCount = guild.memberCount.map { $0 - 1 }
         guilds[event.guildId] = guild
 
-        guard let removedMember = removedMember else { return }
+        guard let member = removedMember else { return }
 
-        logger.debug("(verbose) Removed guild member: \(removedMember)")
+        logger.debug("(verbose) Removed guild member: \(member)")
 
-        delegate?.client(self, didRemoveGuildMember: removedMember)
+        delegate?.client(self, didRemoveGuildMember: member)
     }
 
     ///
