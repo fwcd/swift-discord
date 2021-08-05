@@ -8,25 +8,29 @@ public struct DiscordApplicationCommand: Codable, Identifiable, Hashable {
         case applicationId = "application_id"
         case name
         case description
-        case parameters
+        case options
+        case defaultPermission = "default_permission"
     }
 
     // MARK: Properties
 
     /// The ID of the command.
-    public let id: CommandID
+    public var id: CommandID
 
     /// The ID of the parent application.
-    public let applicationId: ApplicationID
+    public var applicationId: ApplicationID
 
     /// 3-32 character name
-    public let name: String
+    public var name: String
 
     /// 1-100 character description
-    public let description: String
+    public var description: String
 
-    /// The parameters for the command
-    public let parameters: [DiscordApplicationCommandOption]
+    /// The options for the command
+    public var options: [DiscordApplicationCommandOption]?
+
+    /// Whether the command is enabled by default when the app is added to a guild.
+    public var defaultPermission: Bool?
 }
 
 public struct DiscordApplicationCommandOption: Codable, Hashable {
@@ -41,27 +45,27 @@ public struct DiscordApplicationCommandOption: Codable, Hashable {
     }
 
     /// The expected type
-    public let type: DiscordApplicationCommandOptionType?
+    public var type: DiscordApplicationCommandOptionType?
 
     /// 1-32 character name
-    public let name: String
+    public var name: String
 
     /// 1-100 character description
-    public let description: String
+    public var description: String
 
     /// The first required option for the user to complete
     /// Only one option can be default
-    public let isDefault: Bool?
+    public var isDefault: Bool?
 
     /// If the parameter is required or optional, default is false
-    public let isRequired: Bool?
+    public var isRequired: Bool?
 
     /// Choices for string and int types for the user to pick from
-    public let choices: [DiscordApplicationCommandOptionChoice]?
+    public var choices: [DiscordApplicationCommandOptionChoice]?
 
     /// If the option is a subcommand or subcommand group, these
-    /// nested options will be the parameters
-    public let options: [DiscordApplicationCommandOption]?
+    /// nested options will be the options
+    public var options: [DiscordApplicationCommandOption]?
 
     public init(
         type: DiscordApplicationCommandOptionType,
@@ -84,10 +88,10 @@ public struct DiscordApplicationCommandOption: Codable, Hashable {
 
 public struct DiscordApplicationCommandOptionChoice: Codable, Hashable {
     /// 1-100 character choice name
-    public let name: String
+    public var name: String
 
     /// Value of the choice
-    public let value: DiscordApplicationCommandOptionChoiceValue?
+    public var value: DiscordApplicationCommandOptionChoiceValue?
 
     public init(name: String, value: DiscordApplicationCommandOptionChoiceValue? = nil) {
         self.name = name
@@ -146,28 +150,28 @@ public struct DiscordApplicationCommandInteractionData: Codable, Hashable {
     }
 
     /// The ID of the invoked command
-    public let id: CommandID?
+    public var id: CommandID?
 
     /// The name of the invoked command
-    public let name: String?
+    public var name: String?
 
     /// A custom (developer-defined) id attached to e.g. a button interaction.
-    public let customId: String?
+    public var customId: String?
 
     /// The params + values by the user
-    public let options: [DiscordApplicationCommandInteractionDataOption]?
+    public var options: [DiscordApplicationCommandInteractionDataOption]?
 }
 
 public struct DiscordApplicationCommandInteractionDataOption: Codable, Hashable {
     /// The name of the parameter.
-    public let name: String
+    public var name: String
 
     // TODO: Add this and type it property, e.g. using an enum that
     //       encodes itself using an internally tagged representation.
     //       See https://discord.com/developers/docs/interactions/slash-commands#application-command-object-application-command-option-type
     // /// The value of the pair. Type is the OptionType of the command.
-    // public let value: Any?
+    // public var value: Any?
 
     /// Present if this option is a group or subcommand.
-    public let options: [DiscordApplicationCommandInteractionDataOption]?
+    public var options: [DiscordApplicationCommandInteractionDataOption]?
 }
