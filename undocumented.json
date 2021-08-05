@@ -3594,223 +3594,230 @@
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 11,
-      "symbol": "DiscordApplicationCommand.CodingKeys.parameters",
+      "symbol": "DiscordApplicationCommand.CodingKeys.options",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 32,
-      "symbol": "DiscordApplicationCommandOption",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 33,
-      "symbol": "DiscordApplicationCommandOption.CodingKeys",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 34,
-      "symbol": "DiscordApplicationCommandOption.CodingKeys.type",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 35,
-      "symbol": "DiscordApplicationCommandOption.CodingKeys.name",
+      "line": 12,
+      "symbol": "DiscordApplicationCommand.CodingKeys.defaultPermission",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 36,
-      "symbol": "DiscordApplicationCommandOption.CodingKeys.description",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "symbol": "DiscordApplicationCommandOption",
+      "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 37,
-      "symbol": "DiscordApplicationCommandOption.CodingKeys.isDefault",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "symbol": "DiscordApplicationCommandOption.CodingKeys",
+      "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 38,
-      "symbol": "DiscordApplicationCommandOption.CodingKeys.isRequired",
+      "symbol": "DiscordApplicationCommandOption.CodingKeys.type",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 39,
-      "symbol": "DiscordApplicationCommandOption.CodingKeys.choices",
+      "symbol": "DiscordApplicationCommandOption.CodingKeys.name",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
       "line": 40,
+      "symbol": "DiscordApplicationCommandOption.CodingKeys.description",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
+      "line": 41,
+      "symbol": "DiscordApplicationCommandOption.CodingKeys.isDefault",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
+      "line": 42,
+      "symbol": "DiscordApplicationCommandOption.CodingKeys.isRequired",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
+      "line": 43,
+      "symbol": "DiscordApplicationCommandOption.CodingKeys.choices",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
+      "line": 44,
       "symbol": "DiscordApplicationCommandOption.CodingKeys.options",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 66,
+      "line": 70,
       "symbol": "DiscordApplicationCommandOption.init(type:name:description:isDefault:isRequired:choices:options:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 85,
+      "line": 89,
       "symbol": "DiscordApplicationCommandOptionChoice",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 92,
+      "line": 96,
       "symbol": "DiscordApplicationCommandOptionChoice.init(name:value:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 98,
+      "line": 102,
       "symbol": "DiscordApplicationCommandOptionChoiceValue",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 99,
+      "line": 103,
       "symbol": "DiscordApplicationCommandOptionChoiceValue.string(_:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 100,
+      "line": 104,
       "symbol": "DiscordApplicationCommandOptionChoiceValue.int(_:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 123,
+      "line": 127,
       "symbol": "DiscordApplicationCommandOptionType",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 126,
+      "line": 130,
       "symbol": "DiscordApplicationCommandOptionType.subCommand",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 127,
+      "line": 131,
       "symbol": "DiscordApplicationCommandOptionType.subCommandGroup",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 128,
+      "line": 132,
       "symbol": "DiscordApplicationCommandOptionType.string",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 129,
+      "line": 133,
       "symbol": "DiscordApplicationCommandOptionType.integer",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 130,
+      "line": 134,
       "symbol": "DiscordApplicationCommandOptionType.boolean",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 131,
+      "line": 135,
       "symbol": "DiscordApplicationCommandOptionType.user",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 132,
+      "line": 136,
       "symbol": "DiscordApplicationCommandOptionType.channel",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 133,
+      "line": 137,
       "symbol": "DiscordApplicationCommandOptionType.role",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 140,
+      "line": 144,
       "symbol": "DiscordApplicationCommandInteractionData",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 141,
+      "line": 145,
       "symbol": "DiscordApplicationCommandInteractionData.CodingKeys",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 142,
+      "line": 146,
       "symbol": "DiscordApplicationCommandInteractionData.CodingKeys.id",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 143,
+      "line": 147,
       "symbol": "DiscordApplicationCommandInteractionData.CodingKeys.name",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 144,
+      "line": 148,
       "symbol": "DiscordApplicationCommandInteractionData.CodingKeys.customId",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 145,
+      "line": 149,
       "symbol": "DiscordApplicationCommandInteractionData.CodingKeys.options",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/Interaction/DiscordApplicationCommand.swift",
-      "line": 161,
+      "line": 165,
       "symbol": "DiscordApplicationCommandInteractionDataOption",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
