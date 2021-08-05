@@ -283,6 +283,8 @@ public class DiscordEngine: DiscordShard {
         do {
             let decoded = try DiscordJSON.makeDecoder().decode(DiscordGatewayEvent.self, from: data)
             handleGatewayPayload(decoded)
+        } catch DiscordDispatchEventError.unknownEventType(let eventType) {
+            logger.warning("Got unknown gateway event: \(eventType.rawValue)")
         } catch {
             logger.error("Could not decode gateway event: \(error)")
         }
