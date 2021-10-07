@@ -5,6 +5,7 @@ public struct DiscordInteraction: Identifiable, Codable, Hashable {
     public enum CodingKeys: String, CodingKey {
         case id
         case type
+        case customId = "custom_id"
         case data
         case message
         case guildId = "guild_id"
@@ -21,6 +22,9 @@ public struct DiscordInteraction: Identifiable, Codable, Hashable {
 
     /// Type of the interaction
     public let type: DiscordInteractionType?
+
+    /// The custom id of the component (only if `type == .messageComponent`)
+    public let customId: String?
 
     /// Command data payload
     /// Always specified for DiscordApplicationCommand interaction
