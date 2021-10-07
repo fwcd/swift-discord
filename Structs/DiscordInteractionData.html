@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DiscordApplicationCommandInteractionDataOption Structure Reference</title>
+    <title>DiscordInteractionData Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/DiscordApplicationCommandInteractionDataOption" class="dashAnchor"></a>
-    <a title="DiscordApplicationCommandInteractionDataOption Structure Reference"></a>
+    <a name="//apple_ref/swift/Struct/DiscordInteractionData" class="dashAnchor"></a>
+    <a title="DiscordInteractionData Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (66% documented)</p>
@@ -29,7 +29,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" alt=""/>
-        DiscordApplicationCommandInteractionDataOption Structure Reference
+        DiscordInteractionData Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -208,15 +208,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/DiscordApplicationCommand/CodingKeys.html">– CodingKeys</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/DiscordApplicationCommandInteractionData.html">DiscordApplicationCommandInteractionData</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/DiscordApplicationCommandInteractionData/CodingKeys.html">– CodingKeys</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/DiscordApplicationCommandInteractionDataOption.html">DiscordApplicationCommandInteractionDataOption</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/DiscordApplicationCommandOption.html">DiscordApplicationCommandOption</a>
@@ -442,6 +433,15 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/DiscordInteractionApplicationCommandCallbackData/CodingKeys.html">– CodingKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DiscordInteractionData.html">DiscordInteractionData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DiscordInteractionData/CodingKeys.html">– CodingKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DiscordInteractionDataOption.html">DiscordInteractionDataOption</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/DiscordInteractionResponse.html">DiscordInteractionResponse</a>
@@ -782,11 +782,11 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>DiscordApplicationCommandInteractionDataOption</h1>
+            <h1>DiscordInteractionData</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">DiscordApplicationCommandInteractionDataOption</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">DiscordInteractionData</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
 
                 </div>
               </div>
@@ -799,9 +799,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Discord0A39ApplicationCommandInteractionDataOptionV4nameSSvp"></a>
-                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Discord0A39ApplicationCommandInteractionDataOptionV4nameSSvp">name</a>
+                    <a name="/s:7Discord0A15InteractionDataV10CodingKeysO"></a>
+                    <a name="//apple_ref/swift/Enum/CodingKeys" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Discord0A15InteractionDataV10CodingKeysO">CodingKeys</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -809,14 +809,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The name of the parameter.</p>
+                        <p>Undocumented</p>
 
+                        <a href="../Structs/DiscordInteractionData/CodingKeys.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">CodingKeys</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CodingKey</span></code></pre>
 
                         </div>
                       </div>
@@ -826,9 +827,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7Discord0A39ApplicationCommandInteractionDataOptionV7optionsSayACGSgvp"></a>
-                    <a name="//apple_ref/swift/Property/options" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7Discord0A39ApplicationCommandInteractionDataOptionV7optionsSayACGSgvp">options</a>
+                    <a name="/s:7Discord0A15InteractionDataV2idAA9SnowflakeVSgvp"></a>
+                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Discord0A15InteractionDataV2idAA9SnowflakeVSgvp">id</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -836,14 +837,95 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Present if this option is a group or subcommand.</p>
+                        <p>The ID of the invoked command</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">DiscordApplicationCommandInteractionDataOption</span><span class="p">]?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:7Discord9CommandIDa">CommandID</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Discord0A15InteractionDataV4nameSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Discord0A15InteractionDataV4nameSSSgvp">name</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The name of the invoked command</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Discord0A15InteractionDataV8customIdSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/customId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Discord0A15InteractionDataV8customIdSSSgvp">customId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A custom (developer-defined) id attached to e.g. a button interaction.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">customId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7Discord0A15InteractionDataV7optionsSayAA0abC6OptionVGSgvp"></a>
+                    <a name="//apple_ref/swift/Property/options" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Discord0A15InteractionDataV7optionsSayAA0abC6OptionVGSgvp">options</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The params + values by the user</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/DiscordInteractionDataOption.html">DiscordInteractionDataOption</a></span><span class="p">]?</span></code></pre>
 
                         </div>
                       </div>
