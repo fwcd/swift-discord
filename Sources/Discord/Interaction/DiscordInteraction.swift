@@ -5,7 +5,6 @@ public struct DiscordInteraction: Identifiable, Codable, Hashable {
     public enum CodingKeys: String, CodingKey {
         case id
         case type
-        case customId = "custom_id"
         case data
         case message
         case guildId = "guild_id"
@@ -23,13 +22,11 @@ public struct DiscordInteraction: Identifiable, Codable, Hashable {
     /// Type of the interaction
     public let type: DiscordInteractionType?
 
-    /// The custom id of the component (only if `type == .messageComponent`)
-    public let customId: String?
 
     /// Command data payload
     /// Always specified for DiscordApplicationCommand interaction
     /// types, but optional for future-proofing.
-    public let data: DiscordApplicationCommandInteractionData?
+    public let data: DiscordInteractionData?
 
     /// The message a user interacted with, e.g. when pressing a button.
     public let message: DiscordMessage?
@@ -60,4 +57,39 @@ public struct DiscordInteractionType: RawRepresentable, Hashable, Codable {
     public init(rawValue: Int) {
         self.rawValue = rawValue
     }
+}
+
+public struct DiscordInteractionData: Codable, Hashable {
+    public enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case customId = "custom_id"
+        case options
+    }
+
+    /// The ID of the invoked command
+    public var id: CommandID?
+
+    /// The name of the invoked command
+    public var name: String?
+
+    /// A custom (developer-defined) id attached to e.g. a button interaction.
+    public var customId: String?
+
+    /// The params + values by the user
+    public var options: [DiscordInteractionDataOption]?
+}
+
+public struct DiscordInteractionDataOption: Codable, Hashable {
+    /// The name of the parameter.
+    public var name: String
+
+    // TODO: Add this and type it property, e.g. using an enum that
+    //       encodes itself using an internally tagged representation.
+    //       See https://discord.com/developers/docs/interactions/slash-commands#application-command-object-application-command-option-type
+    // /// The value of the pair. Type is the OptionType of the command.
+    // public var value: Any?
+
+    /// Present if this option is a group or subcommand.
+    public var options: [DiscordInteractionDataOption]?
 }

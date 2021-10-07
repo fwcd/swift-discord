@@ -140,38 +140,3 @@ public struct DiscordApplicationCommandOptionType: RawRepresentable, Codable, Ha
         self.rawValue = rawValue
     }
 }
-
-public struct DiscordApplicationCommandInteractionData: Codable, Hashable {
-    public enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case customId = "custom_id"
-        case options
-    }
-
-    /// The ID of the invoked command
-    public var id: CommandID?
-
-    /// The name of the invoked command
-    public var name: String?
-
-    /// A custom (developer-defined) id attached to e.g. a button interaction.
-    public var customId: String?
-
-    /// The params + values by the user
-    public var options: [DiscordApplicationCommandInteractionDataOption]?
-}
-
-public struct DiscordApplicationCommandInteractionDataOption: Codable, Hashable {
-    /// The name of the parameter.
-    public var name: String
-
-    // TODO: Add this and type it property, e.g. using an enum that
-    //       encodes itself using an internally tagged representation.
-    //       See https://discord.com/developers/docs/interactions/slash-commands#application-command-object-application-command-option-type
-    // /// The value of the pair. Type is the OptionType of the command.
-    // public var value: Any?
-
-    /// Present if this option is a group or subcommand.
-    public var options: [DiscordApplicationCommandInteractionDataOption]?
-}
