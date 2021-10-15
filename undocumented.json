@@ -1472,14 +1472,14 @@
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/DiscordUtils.swift",
-      "line": 174,
+      "line": 180,
       "symbol": "CodableBox.wrappedValue",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/swift-discord/swift-discord/Sources/Discord/DiscordUtils.swift",
-      "line": 180,
+      "line": 186,
       "symbol": "CodableBox.init(wrappedValue:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
