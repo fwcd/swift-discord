@@ -27,13 +27,28 @@ fileprivate let logger = Logger(label: "DiscordJSON")
 enum DiscordJSON {
     static func makeEncoder() -> JSONEncoder {
         let encoder = JSONEncoder()
-        encoder.dateEncodingStrategy = .formatted(DiscordDateFormatter.rfc3339DateFormatter)
+        encoder.dateEncodingStrategy = .custom({ date, encoder throws in
+            let iso8601 = DiscordDateFormatter.string(from: date)
+            var container = encoder.singleValueContainer()
+            try container.encode(iso8601)
+        })
         return encoder
     }
 
     static func makeDecoder() -> JSONDecoder {
         let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .formatted(DiscordDateFormatter.rfc3339DateFormatter)
+        decoder.dateDecodingStrategy = .custom({ (decoder: Decoder) throws in
+            let container = try decoder.singleValueContainer()
+            let iso8601 = try container.decode(String.self)
+            guard let date = DiscordDateFormatter.date(from: iso8601) else {
+                let context = DecodingError.Context(
+                    codingPath: container.codingPath,
+                    debugDescription: "Could not decode date '\(iso8601)' as ISO8601"
+                )
+                throw DecodingError.dataCorrupted(context)
+            }
+            return date
+        })
         return decoder
     }
 

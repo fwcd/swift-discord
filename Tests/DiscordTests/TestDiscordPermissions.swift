@@ -133,7 +133,7 @@ let permissionTestMemberRoles: [[RoleID]] = [
 let permissionsTestMembers = zip(permissionsTestUsers, permissionTestMemberRoles).map({zipped -> DiscordGuildMember in
     let (user, roles) = zipped
     
-    return DiscordGuildMember(guildId: permissionsTestGuild.id, user: user, deaf: false, mute: false, nick: nil, roleIds: roles, joinedAt: DiscordDateFormatter.format("2017-04-25T20:00:00.000000+00:00")!)
+    return DiscordGuildMember(guildId: permissionsTestGuild.id, user: user, deaf: false, mute: false, nick: nil, roleIds: roles, joinedAt: DiscordDateFormatter.date(from: "2017-04-25T20:00:00.000000+00:00")!)
 })
 
 func createPermissionTestChannel(overwrites: [DiscordPermissionOverwrite]) -> DiscordChannel {

@@ -128,14 +128,13 @@ func createMultipartBody(encodedJSON: Data, files: [DiscordFileUpload]) -> (boun
 
 // Enum for namespacing
 enum DiscordDateFormatter {
-    static let rfc3339DateFormatter: DateFormatter = { () -> DateFormatter in
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
-        formatter.locale = Locale(identifier: "en_US")
+    static let rfc3339DateFormatter: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
         return formatter
     }()
 
-    static func format(_ string: String) -> Date? {
+    static func date(from string: String) -> Date? {
         return DiscordDateFormatter.rfc3339DateFormatter.date(from: string)
     }
 
