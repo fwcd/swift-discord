@@ -38,7 +38,7 @@ public protocol DiscordTokenBearer {
 /// The "Bot" prefix indicates that this token is a bot. This must included if the token is for a bot.
 /// Likewise, if the token is an OAuth token, it must be preceded by "Bearer". User tokens can omit a prefix.
 ///
-public struct DiscordToken: RawRepresentable, Codable, ExpressibleByStringLiteral, CustomStringConvertible, Hashable {
+public struct DiscordToken: RawRepresentable, Codable, ExpressibleByStringLiteral, ExpressibleByStringInterpolation, CustomStringConvertible, Hashable {
     // MARK: Typealiases
 
     /// ExpressibleByStringLiteral conformance
@@ -94,6 +94,15 @@ public struct DiscordToken: RawRepresentable, Codable, ExpressibleByStringLitera
     ///
     public init(stringLiteral value: StringLiteralType) {
         rawValue = value
+    }
+
+    ///
+    /// ExpressibleByStringInterpolation conformance.
+    ///
+    /// - parameter stringInterpolation: The interpolation
+    ///
+    public init(stringInterpolation: String.StringInterpolation) {
+        rawValue = String(stringInterpolation: stringInterpolation)
     }
 
     /// Creates a new token from a string.
