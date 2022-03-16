@@ -18,7 +18,7 @@ jobs:
       uses: fwcd/swift-docc-action@v1
       with:
         target: Discord
-        output: ./docs
+        output: ./public
         transform-for-static-hosting: 'true'
         disable-indexing: 'true'
     - name: Deploy Docs
