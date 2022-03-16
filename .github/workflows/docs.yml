@@ -21,6 +21,7 @@ jobs:
         output: ./public
         transform-for-static-hosting: 'true'
         disable-indexing: 'true'
+        hosting-base-path: swift-discord
     - name: Deploy Docs
       uses: peaceiris/actions-gh-pages@v3
       with:
