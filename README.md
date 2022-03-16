@@ -1,8 +1,10 @@
 # Discord Client for Swift
 
 [![Linux](https://github.com/fwcd/swift-discord/actions/workflows/linux.yml/badge.svg)](https://github.com/fwcd/swift-discord/actions/workflows/linux.yml)
-[![macOS](https://github.com/fwcd/swift-discord/actions/workflows/mac.yml/badge.svg)](https://github.com/fwcd/swift-discord/actions/workflows/mac.yml)
 [![Docs](https://github.com/fwcd/swift-discord/actions/workflows/docs.yml/badge.svg)](https://fwcd.github.io/swift-discord/documentation/discord)
+
+<!-- TODO: Disabled until https://github.com/fwcd/swift-discord/issues/10 is resolved -->
+<!-- [![macOS](https://github.com/fwcd/swift-discord/actions/workflows/mac.yml/badge.svg)](https://github.com/fwcd/swift-discord/actions/workflows/mac.yml) -->
 
 A client library for the [Discord API](https://discord.com/developers/docs) written in Swift.
 
@@ -41,7 +43,7 @@ Check out the [Getting Started](UsageDocs/Getting%20Started.md) page for a quick
 
 ## Requirements
 
-- Swift 5+
+- Swift 5.6+
 
 ## Building
 
