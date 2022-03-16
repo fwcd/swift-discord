@@ -7,14 +7,20 @@ on:
 
 jobs:
   deploy:
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: Generate Docs
-      uses: sersoft-gmbh/swifty-docs-action@v1
+    - uses: fwal/setup-swift@v1
       with:
-        output: public
+        swift-version: '5.6'
+    - name: Generate Docs
+      uses: fwcd/swift-docc-action@v1
+      with:
+        target: Discord
+        output: ./docs
+        transform-for-static-hosting: 'true'
+        disable-indexing: 'true'
     - name: Deploy Docs
       uses: peaceiris/actions-gh-pages@v3
       with:
