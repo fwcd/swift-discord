@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: fwal/setup-swift@v1
+    - uses: fwal/setup-swift@v1.14.0
       with:
         swift-version: ${{ matrix.swift }}
     - name: Build
