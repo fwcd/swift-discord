@@ -1,7 +1,6 @@
 # Discord Client for Swift
 
-[![Linux](https://github.com/fwcd/swift-discord/actions/workflows/linux.yml/badge.svg)](https://github.com/fwcd/swift-discord/actions/workflows/linux.yml)
-[![macOS](https://github.com/fwcd/swift-discord/actions/workflows/mac.yml/badge.svg)](https://github.com/fwcd/swift-discord/actions/workflows/mac.yml)
+[![Build](https://github.com/fwcd/swift-discord/actions/workflows/build.yml/badge.svg)](https://github.com/fwcd/swift-discord/actions/workflows/build.yml)
 [![Docs](https://github.com/fwcd/swift-discord/actions/workflows/docs.yml/badge.svg)](https://fwcd.github.io/swift-discord/documentation/discord)
 
 <!-- TODO: Disabled until https://github.com/fwcd/swift-discord/issues/10 is resolved -->
