@@ -3,9 +3,6 @@
 [![Build](https://github.com/fwcd/swift-discord/actions/workflows/build.yml/badge.svg)](https://github.com/fwcd/swift-discord/actions/workflows/build.yml)
 [![Docs](https://github.com/fwcd/swift-discord/actions/workflows/docs.yml/badge.svg)](https://fwcd.github.io/swift-discord/documentation/discord)
 
-<!-- TODO: Disabled until https://github.com/fwcd/swift-discord/issues/10 is resolved -->
-<!-- [![macOS](https://github.com/fwcd/swift-discord/actions/workflows/mac.yml/badge.svg)](https://github.com/fwcd/swift-discord/actions/workflows/mac.yml) -->
-
 A client library for the [Discord API](https://discord.com/developers/docs) written in Swift.
 
 ## Example

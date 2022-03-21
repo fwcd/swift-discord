@@ -10,3 +10,5 @@ DiscordTestTests/
 DiscordTestUITests/
 /.idea
 /.vscode
+/.swiftpm
+xcuserdata
