@@ -40,9 +40,9 @@ func client(_ client: DiscordClient, didCreateMessage message: DiscordMessage) {
 
 ```
 
-In this code we've added two delegate methods. The `client(_ client: DiscordClient, didConnect connected: Bool)` method is called once all shards have connected. It's best to wait until this event is received before trying to do anything with the client, otherwise the client might not be fully populated with Guild and Channel information.
+In this code we've added two delegate methods. The ``DiscordClientDelegate/client(_:didConnect:)`` method is called once all shards have connected. It's best to wait until this event is received before trying to do anything with the client, otherwise the client might not be fully populated with Guild and Channel information.
 
-The `client(_ client: DiscordClient, didCreateMessage message: DiscordMessage)` method is called whenever a message is received from the gateway. This particular implemenation just checks if the content of the message is a command, and if it is, sends a response.
+The ``DiscordClientDelegate/client(_:didCreateMessage:)`` method is called whenever a message is received from the gateway. This particular implemenation just checks if the content of the message is a command, and if it is, sends a response.
 
 ## Connecting the client
 
