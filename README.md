@@ -30,7 +30,7 @@ let bot = Bot()
 dispatchMain()
 ```
 
-Check out the [Getting Started](UsageDocs/Getting%20Started.md) page for a quickstart guide.
+Check out the [Getting Started](Sources/Discord/Documentation.docc/Getting%20Started.md) page for a quickstart guide.
 
 ## Features
 
