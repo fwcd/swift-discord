@@ -44,10 +44,10 @@ public struct DiscordGuildMember: Codable, Identifiable, Hashable {
     public var user: DiscordUser
 
     /// Whether this member has been deafened.
-    public var deaf: Bool
+    public var deaf: Bool?
 
     /// Whether this member is muted.
-    public var mute: Bool
+    public var mute: Bool?
 
     /// This member's nickname, if they have one.
     public var nick: String?
@@ -57,7 +57,7 @@ public struct DiscordGuildMember: Codable, Identifiable, Hashable {
 
     public var id: UserID { user.id }
 
-    init(guildId: GuildID? = nil, user: DiscordUser, deaf: Bool, mute: Bool, nick: String?, roleIds: [RoleID], joinedAt: Date) {
+    init(guildId: GuildID? = nil, user: DiscordUser, deaf: Bool? = nil, mute: Bool? = nil, nick: String? = nil, roleIds: [RoleID], joinedAt: Date) {
         self.user = user
         self.deaf = deaf
         self.mute = mute
