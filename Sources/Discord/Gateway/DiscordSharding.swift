@@ -65,7 +65,7 @@ public protocol DiscordEventLoopGroupManager {
     // MARK: Properties
 
     /// The run loops.
-    var runloops: MultiThreadedEventLoopGroup { get }
+    var eventLoopGroup: EventLoopGroup! { get }
 }
 
 /// Protocol that represents a sharded gateway connection. This is the top-level protocol for
@@ -266,7 +266,7 @@ public class DiscordShardManager: DiscordShardDelegate, Lockable {
                                                       withShardNum: shardNum,
                                                       totalShards: info.totalShards,
                                                       intents: intents,
-                                                      onloop: delegate.runloops.next()))
+                                                      onloop: delegate.eventLoopGroup.next()))
             }
         }
     }

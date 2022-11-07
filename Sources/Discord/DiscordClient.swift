@@ -49,7 +49,7 @@ public class DiscordClient: DiscordShardManagerDelegate, DiscordUserActor, Disco
     public var rateLimiter: DiscordRateLimiterSpec!
 
     /// The run loops.
-    public let runloops = MultiThreadedEventLoopGroup(numberOfThreads: System.coreCount)
+    public var eventLoopGroup: EventLoopGroup!
 
     /// The Discord JWT token.
     public let token: DiscordToken
@@ -127,14 +127,17 @@ public class DiscordClient: DiscordShardManagerDelegate, DiscordUserActor, Disco
                 fillUsers = true
             case .pruneUsers:
                 pruneUsers = true
+            case .eventLoopGroup(let eventLoopGroup):
+                self.eventLoopGroup = eventLoopGroup
             }
         }
 
+        eventLoopGroup = eventLoopGroup ?? MultiThreadedEventLoopGroup(numberOfThreads: System.coreCount)
         rateLimiter = rateLimiter ?? DiscordRateLimiter(callbackQueue: handleQueue, failFast: false)
     }
 
     deinit {
-        try! runloops.syncShutdownGracefully()
+        try! eventLoopGroup.syncShutdownGracefully()
     }
 
     // MARK: Methods
