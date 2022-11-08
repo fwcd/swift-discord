@@ -51,7 +51,9 @@ public enum DiscordClientOption : CustomStringConvertible, Equatable {
     /// Tells the client the number of shards to create. If not provided, one shard will be created.
     case shardingInfo(DiscordShardInformation)
 
-    /// The event loop to use.
+    /// A shared event loop group to use. If provided, the caller is expected to manage its lifecycle,
+    /// i.e. the DiscordClient will not shut it down when deinitialized. If not provided, the DiscordClient
+    /// will create one internally and also shut it down on deinitialization.
     case eventLoopGroup(EventLoopGroup)
 
     // MARK: Properties

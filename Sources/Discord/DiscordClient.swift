@@ -48,8 +48,12 @@ public class DiscordClient: DiscordShardManagerDelegate, DiscordUserActor, Disco
     /// The rate limiter for this client.
     public var rateLimiter: DiscordRateLimiterSpec!
 
-    /// The run loops.
-    public var eventLoopGroup: EventLoopGroup!
+    /// The event loop group to use.
+    public private(set) var eventLoopGroup: EventLoopGroup!
+
+    /// Whether to manage the lifecycle (i.e. shut down) the event loop group upon deinitialization.
+    /// If false, the event loop group is expected to outlive the `DiscordClient`.
+    private var ownsEventLoopGroup: Bool!
 
     /// The Discord JWT token.
     public let token: DiscordToken
@@ -132,12 +136,15 @@ public class DiscordClient: DiscordShardManagerDelegate, DiscordUserActor, Disco
             }
         }
 
+        ownsEventLoopGroup = eventLoopGroup == nil
         eventLoopGroup = eventLoopGroup ?? MultiThreadedEventLoopGroup(numberOfThreads: System.coreCount)
         rateLimiter = rateLimiter ?? DiscordRateLimiter(callbackQueue: handleQueue, failFast: false)
     }
 
     deinit {
-        try! eventLoopGroup.syncShutdownGracefully()
+        if ownsEventLoopGroup {
+            try! eventLoopGroup.syncShutdownGracefully()
+        }
     }
 
     // MARK: Methods
