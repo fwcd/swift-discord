@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
-    - uses: fwal/setup-swift@v1.14.0
+    - uses: swift-actions/setup-swift@v1
       with:
         swift-version: ${{ matrix.swift }}
     - name: Build
