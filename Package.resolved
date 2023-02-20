@@ -1,70 +1,86 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "BigInt",
-        "repositoryURL": "https://github.com/attaswift/BigInt.git",
-        "state": {
-          "branch": null,
-          "revision": "0ed110f7555c34ff468e72e1686e59721f2b0da6",
-          "version": "5.3.0"
-        }
-      },
-      {
-        "package": "Socket",
-        "repositoryURL": "https://github.com/Kitura/BlueSocket.git",
-        "state": {
-          "branch": null,
-          "revision": "c9894fd117457f1d006575fbfb2fdfd6f79eac03",
-          "version": "1.0.200"
-        }
-      },
-      {
-        "package": "SwiftDocCPlugin",
-        "repositoryURL": "https://github.com/apple/swift-docc-plugin",
-        "state": {
-          "branch": null,
-          "revision": "3303b164430d9a7055ba484c8ead67a52f7b74f6",
-          "version": "1.0.0"
-        }
-      },
-      {
-        "package": "swift-log",
-        "repositoryURL": "https://github.com/apple/swift-log.git",
-        "state": {
-          "branch": null,
-          "revision": "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
-          "version": "1.4.2"
-        }
-      },
-      {
-        "package": "swift-nio",
-        "repositoryURL": "https://github.com/apple/swift-nio.git",
-        "state": {
-          "branch": null,
-          "revision": "154f1d32366449dcccf6375a173adf4ed2a74429",
-          "version": "2.38.0"
-        }
-      },
-      {
-        "package": "swift-nio-ssl",
-        "repositoryURL": "https://github.com/apple/swift-nio-ssl.git",
-        "state": {
-          "branch": null,
-          "revision": "52a486ff6de9bc3e26bf634c5413c41c5fa89ca5",
-          "version": "2.17.2"
-        }
-      },
-      {
-        "package": "websocket-kit",
-        "repositoryURL": "https://github.com/vapor/websocket-kit.git",
-        "state": {
-          "branch": null,
-          "revision": "d7537b787d37f3877e36b5f1e7cb910f7c401836",
-          "version": "2.1.4"
-        }
+  "pins" : [
+    {
+      "identity" : "bigint",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/attaswift/BigInt.git",
+      "state" : {
+        "revision" : "0ed110f7555c34ff468e72e1686e59721f2b0da6",
+        "version" : "5.3.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "bluesocket",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Kitura/BlueSocket.git",
+      "state" : {
+        "revision" : "7b23a867008e0027bfd6f4d398d44720707bc8ca",
+        "version" : "2.0.4"
+      }
+    },
+    {
+      "identity" : "swift-atomics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-atomics.git",
+      "state" : {
+        "revision" : "ff3d2212b6b093db7f177d0855adbc4ef9c5f036",
+        "version" : "1.0.3"
+      }
+    },
+    {
+      "identity" : "swift-docc-plugin",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-docc-plugin",
+      "state" : {
+        "revision" : "3303b164430d9a7055ba484c8ead67a52f7b74f6",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "swift-log",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-log.git",
+      "state" : {
+        "revision" : "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
+        "version" : "1.4.2"
+      }
+    },
+    {
+      "identity" : "swift-nio",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-nio.git",
+      "state" : {
+        "revision" : "154f1d32366449dcccf6375a173adf4ed2a74429",
+        "version" : "2.38.0"
+      }
+    },
+    {
+      "identity" : "swift-nio-ssl",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-nio-ssl.git",
+      "state" : {
+        "revision" : "52a486ff6de9bc3e26bf634c5413c41c5fa89ca5",
+        "version" : "2.17.2"
+      }
+    },
+    {
+      "identity" : "swift-nio-transport-services",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-nio-transport-services.git",
+      "state" : {
+        "revision" : "4e02d9cf35cabfb538c96613272fb027dd0c8692",
+        "version" : "1.13.1"
+      }
+    },
+    {
+      "identity" : "websocket-kit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vapor/websocket-kit.git",
+      "state" : {
+        "revision" : "2d9d2188a08eef4a869d368daab21b3c08510991",
+        "version" : "2.6.1"
+      }
+    }
+  ],
+  "version" : 2
 }

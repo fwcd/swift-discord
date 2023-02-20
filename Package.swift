@@ -27,8 +27,8 @@ let package = Package(
         .library(name: "Discord", targets: ["Discord"])
     ],
     dependencies: [
-        .package(url: "https://github.com/vapor/websocket-kit.git", .upToNextMinor(from: "2.1.0")),
-        .package(url: "https://github.com/Kitura/BlueSocket.git", .upToNextMinor(from: "1.0.0")),
+        .package(url: "https://github.com/vapor/websocket-kit.git", .upToNextMinor(from: "2.6.0")),
+        .package(url: "https://github.com/Kitura/BlueSocket.git", .upToNextMinor(from: "2.0.4")),
         .package(url: "https://github.com/apple/swift-log.git", from: "1.0.0"),
         .package(url: "https://github.com/attaswift/BigInt.git", from: "5.2.1"),
         .package(url: "https://github.com/apple/swift-docc-plugin.git", from: "1.0.0"),
