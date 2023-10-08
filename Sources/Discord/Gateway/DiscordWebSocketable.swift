@@ -84,7 +84,7 @@ public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordRu
         websocket?.onClose.whenSuccess { [weak self] in
             guard let this = self else { return }
             
-            logger.info("Websocket closed, \(this.description)")
+            logger.info("WebSocket closed, \(this.description)")
             
             this.handleClose(reason: nil)
         }
@@ -138,7 +138,7 @@ public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordRu
         future.whenFailure { [weak self] err in
             guard let this = self else { return }
             
-            logger.info("Websocket errored, closing: \(err), \(this.description)")
+            logger.info("WebSocket errored, closing: \(err), \(this.description)")
             
             this.handleClose(reason: err)
         }
