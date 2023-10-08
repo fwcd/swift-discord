@@ -39,7 +39,7 @@ public class DiscordEngine: DiscordShard {
     // MARK: Properties
 
     /// The url for the gateway.
-    public var connectURL: String { "\(DiscordEndpointGateway.gatewayURL)/?v=9&encoding=json" }
+    public var connectURL: String { "\(DiscordEndpointGateway.gatewayURL)/?v=\(discordAPIVersion)&encoding=json" }
 
     /// The type of DiscordEngineSpec. Used to correctly fire events.
     public var description: String { "shard: \(shardNum)" }
