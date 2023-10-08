@@ -1,2 +1,2 @@
 /// The Discord API version to use.
-let discordAPIVersion = 9
+let discordAPIVersion = 10
