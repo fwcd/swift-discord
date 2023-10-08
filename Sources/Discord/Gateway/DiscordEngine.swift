@@ -170,8 +170,6 @@ public class DiscordEngine: DiscordShard {
 
             return
         }
-
-        resumeGateway()
     }
 
     ///
