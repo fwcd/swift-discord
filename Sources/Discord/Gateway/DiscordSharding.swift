@@ -225,9 +225,20 @@ public class DiscordShardManager: DiscordShardDelegate, Lockable {
     /// - parameter totalShards: The total number of shards.
     /// - returns: A new `DiscordShard`
     ///
-    public func createShardWithDelegate(_ delegate: DiscordShardManagerDelegate, withShardNum shardNum: Int,
-                                      totalShards: Int, intents: DiscordGatewayIntents, onloop: EventLoop) -> DiscordShard {
-        return DiscordEngine(delegate: self, shardNum: shardNum, numShards: totalShards, intents: intents, onLoop: onloop)
+    public func createShardWithDelegate(
+        _ delegate: DiscordShardManagerDelegate,
+        withShardNum shardNum: Int,
+        totalShards: Int,
+        intents: DiscordGatewayIntents,
+        onloop: EventLoop
+    ) -> DiscordShard {
+        return DiscordEngine(
+            delegate: self,
+            shardNum: shardNum, 
+            numShards: totalShards,
+            intents: intents,
+            onLoop: onloop
+        )
     }
 
     ///
@@ -262,11 +273,13 @@ public class DiscordShardManager: DiscordShardDelegate, Lockable {
 
         protected {
             for shardNum in info.shardRange {
-                shards.append(createShardWithDelegate(delegate,
-                                                      withShardNum: shardNum,
-                                                      totalShards: info.totalShards,
-                                                      intents: intents,
-                                                      onloop: delegate.eventLoopGroup.next()))
+                shards.append(createShardWithDelegate(
+                    delegate,
+                    withShardNum: shardNum,
+                    totalShards: info.totalShards,
+                    intents: intents,
+                    onloop: delegate.eventLoopGroup.next()
+                ))
             }
         }
     }

@@ -107,8 +107,11 @@ public class DiscordClient: DiscordShardManagerDelegate, DiscordUserActor, Disco
     /// - parameter delegate: The delegate for this client.
     /// - parameter configuration: An array of DiscordClientOption that can be used to customize the client
     ///
-    public required init(token: DiscordToken, delegate: DiscordClientDelegate,
-                         configuration: [DiscordClientOption] = []) {
+    public required init(
+        token: DiscordToken,
+        delegate: DiscordClientDelegate,
+        configuration: [DiscordClientOption] = []
+    ) {
         self.token = token
         self.shardManager = DiscordShardManager(delegate: self)
         self.delegate = delegate
