@@ -21,14 +21,14 @@ public protocol DiscordShardDelegate: AnyObject, DiscordTokenBearer {
     ///
     /// Used by shards to signal that they have connected.
     ///
-    /// - parameter shardNum: The number of the shard that disconnected.
+    /// - parameter shard: The shard that disconnected.
     ///
     func shardDidConnect(_ shard: DiscordShard)
 
     ///
     /// Used by shards to signal that they have disconnected
     ///
-    /// - parameter shardNum: The number of the shard that disconnected.
+    /// - parameter shard: The shard that disconnected.
     /// - parameter reason: The reason why the shard disconnected.
     /// - parameter closed: Whether the connection was closed.
     ///
