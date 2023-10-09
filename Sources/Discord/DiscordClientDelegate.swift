@@ -37,7 +37,7 @@ public protocol DiscordClientDelegate : AnyObject {
     /// - parameter client: The client that is calling.
     /// - parameter didDisconnectWithReason: The reason the client disconnected.
     ///
-    func client(_ client: DiscordClient, didDisconnectWithReason reason: String)
+    func client(_ client: DiscordClient, didDisconnectWithReason reason: DiscordGatewayCloseReason)
 
     ///
     /// Called when the client creates a new channel.
@@ -275,7 +275,7 @@ public extension DiscordClientDelegate {
     func client(_ client: DiscordClient, didConnect connected: Bool) { }
 
     /// Default.
-    func client(_ client: DiscordClient, didDisconnectWithReason reason: String) { }
+    func client(_ client: DiscordClient, didDisconnectWithReason reason: DiscordGatewayCloseReason) { }
 
     /// Default.
     func client(_ client: DiscordClient, didCreateChannel channel: DiscordChannel) { }

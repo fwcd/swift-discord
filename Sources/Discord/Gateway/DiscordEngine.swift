@@ -165,11 +165,7 @@ public class DiscordEngine: DiscordShard {
             sessionId = nil
         }
 
-        guard !closed else {
-            delegate?.shardDidDisconnect(self)
-
-            return
-        }
+        delegate?.shard(self, didDisconnectWithReason: closeReason, closed: closed)
     }
 
     ///

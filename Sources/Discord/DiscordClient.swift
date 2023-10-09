@@ -307,9 +307,10 @@ public class DiscordClient: DiscordShardManagerDelegate, DiscordUserActor, Disco
     /// Signals that the manager has disconnected.
     ///
     /// - parameter manager: The manager.
-    /// - parameter didDisconnectWithReason: The reason the manager disconnected.
+    /// - parameter didDisconnectWithReason: The reason why the manager disconnected.
+    /// - parameter closed: Whether the socket was closed.
     ///
-    public func shardManager(_ manager: DiscordShardManager, didDisconnectWithReason reason: String) {
+    public func shardManager(_ manager: DiscordShardManager, didDisconnectWithReason reason: DiscordGatewayCloseReason, closed: Bool) {
         handleQueue.async {
             self.connected = false
 

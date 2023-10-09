@@ -108,8 +108,10 @@ public protocol DiscordShardDelegate: AnyObject, DiscordTokenBearer {
     /// Used by shards to signal that they have disconnected
     ///
     /// - parameter shardNum: The number of the shard that disconnected.
+    /// - parameter reason: The reason why the shard disconnected.
+    /// - parameter closed: Whether the connection was closed.
     ///
-    func shardDidDisconnect(_ shard: DiscordShard)
+    func shard(_ shard: DiscordShard, didDisconnectWithReason reason: DiscordGatewayCloseReason, closed: Bool)
 
     ///
     /// Handles engine dispatch events. You shouldn't need to call this method directly.
@@ -146,9 +148,10 @@ public protocol DiscordShardManagerDelegate : AnyObject, DiscordEventLoopGroupMa
     /// Signals that the manager has disconnected.
     ///
     /// - parameter manager: The manager.
-    /// - parameter didDisconnectWithReason: The reason the manager disconnected.
+    /// - parameter didDisconnectWithReason: The reason why the manager disconnected.
+    /// - parameter closed: Whether the socket was closed.
     ///
-    func shardManager(_ manager: DiscordShardManager, didDisconnectWithReason reason: String)
+    func shardManager(_ manager: DiscordShardManager, didDisconnectWithReason reason: DiscordGatewayCloseReason, closed: Bool)
 
     ///
     /// Signals that the manager received an event. The client should handle this.
@@ -255,7 +258,7 @@ public class DiscordShardManager: DiscordShardDelegate, Lockable {
 
         if get(connectedShards != shards.count) {
             // Still connecting, say we disconnected, since we never connected to begin with
-            delegate?.shardManager(self, didDisconnectWithReason: "Closed")
+            delegate?.shardManager(self, didDisconnectWithReason: .normal, closed: true)
         }
     }
 
@@ -333,14 +336,16 @@ public class DiscordShardManager: DiscordShardDelegate, Lockable {
     /// Used by shards to signal that they have disconnected
     ///
     /// - parameter shardNum: The number of the shard that disconnected.
+    /// - parameter reason: The reason why the shard disconnected.
+    /// - parameter closed: Whether the connection was closed.
     ///
-    public func shardDidDisconnect(_ shard: DiscordShard) {
+    public func shard(_ shard: DiscordShard, didDisconnectWithReason reason: DiscordGatewayCloseReason, closed: Bool) {
         logger.debug("(verbose) Shard #\(shard.shardNum), disconnected")
 
         protected { closedShards += 1 }
 
         guard get(closedShards == shards.count) else { return }
 
-        delegate?.shardManager(self, didDisconnectWithReason: "Closed")
+        delegate?.shardManager(self, didDisconnectWithReason: reason, closed: closed)
     }
 }
