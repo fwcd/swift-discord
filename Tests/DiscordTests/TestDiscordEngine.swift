@@ -76,5 +76,5 @@ public extension TestDiscordEngine {
 
     func shardDidConnect(_ shard: DiscordShard) { }
 
-    func shardDidDisconnect(_ shard: DiscordShard) { }
+    func shard(_ shard: DiscordShard, didDisconnectWithReason reason: DiscordGatewayCloseReason, closed: Bool) { }
 }
