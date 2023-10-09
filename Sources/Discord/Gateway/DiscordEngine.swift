@@ -166,6 +166,10 @@ public class DiscordEngine: DiscordShard {
         }
 
         delegate?.shard(self, didDisconnectWithReason: closeReason, closed: closed)
+
+        if delegate?.shard(self, shouldAttemptResuming: closeReason, closed: closed) ?? false {
+            resumeGateway()
+        }
     }
 
     ///

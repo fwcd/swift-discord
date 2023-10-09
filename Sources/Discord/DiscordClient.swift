@@ -301,7 +301,13 @@ public class DiscordClient: DiscordShardManagerDelegate, DiscordUserActor, Disco
         handleQueue.async {
             self.connected = false
 
-            self.delegate?.client(self, didDisconnectWithReason: reason)
+            self.delegate?.client(self, didDisconnectWithReason: reason, closed: closed)
+        }
+    }
+
+    public func shardManager(_ manager: DiscordShardManager, shouldAttemptResuming reason: DiscordGatewayCloseReason, closed: Bool) -> Bool {
+        handleQueue.sync {
+            self.delegate?.client(self, shouldAttemptResuming: reason, closed: closed) ?? false
         }
     }
 

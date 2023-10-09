@@ -182,4 +182,8 @@ public class DiscordShardManager: DiscordShardDelegate, Lockable {
 
         delegate?.shardManager(self, didDisconnectWithReason: reason, closed: closed)
     }
+
+    public func shard(_ shard: DiscordShard, shouldAttemptResuming reason: DiscordGatewayCloseReason, closed: Bool) -> Bool {
+        delegate?.shardManager(self, shouldAttemptResuming: reason, closed: closed) ?? false
+    }
 }

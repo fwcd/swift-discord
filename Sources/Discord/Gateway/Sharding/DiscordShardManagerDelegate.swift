@@ -38,6 +38,17 @@ public protocol DiscordShardManagerDelegate : AnyObject, DiscordEventLoopGroupMa
     func shardManager(_ manager: DiscordShardManager, didDisconnectWithReason reason: DiscordGatewayCloseReason, closed: Bool)
 
     ///
+    /// Whether the manager should attempt resuming the shard.
+    /// This was the classic behavior, which is now disabled by
+    /// default to avoid accidentally spamming the gateway.
+    ///
+    /// - parameter manager: The manager.
+    /// - parameter reason: The reason why the shard disconnected.
+    /// - parameter closed: Whether the connection was closed.
+    /// 
+    func shardManager(_ manager: DiscordShardManager, shouldAttemptResuming reason: DiscordGatewayCloseReason, closed: Bool) -> Bool
+
+    ///
     /// Signals that the manager received an event. The client should handle this.
     ///
     /// - parameter manager: The manager.

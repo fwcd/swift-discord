@@ -35,6 +35,17 @@ public protocol DiscordShardDelegate: AnyObject, DiscordTokenBearer {
     func shard(_ shard: DiscordShard, didDisconnectWithReason reason: DiscordGatewayCloseReason, closed: Bool)
 
     ///
+    /// Whether the shard should attempt resuming the connection.
+    /// This was the classic behavior, which is now disabled by
+    /// default to avoid accidentally spamming the gateway.
+    ///
+    /// - parameter shard: The shard that disconnected.
+    /// - parameter reason: The reason why the shard disconnected.
+    /// - parameter closed: Whether the connection was closed.
+    /// 
+    func shard(_ shard: DiscordShard, shouldAttemptResuming reason: DiscordGatewayCloseReason, closed: Bool) -> Bool
+
+    ///
     /// Handles engine dispatch events. You shouldn't need to call this method directly.
     ///
     /// Override to provide custom engine dispatch functionality.
