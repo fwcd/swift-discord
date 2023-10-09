@@ -65,17 +65,6 @@ public struct DiscordMessage: ExpressibleByStringLiteral, Identifiable, Codable,
         case type
     }
 
-    // MARK: Typealiases
-
-    /// ExpressibleByStringLiteral conformance
-    public typealias StringLiteralType = String
-
-    /// ExpressibleByStringLiteral conformance.
-    public typealias ExtendedGraphemeClusterLiteralType = String.ExtendedGraphemeClusterLiteralType
-
-    /// ExpressibleByStringLiteral conformance.
-    public typealias UnicodeScalarLiteralType = String.UnicodeScalarLiteralType
-
     // MARK: Properties
 
     /// The snowflake id of this message.
@@ -262,29 +251,6 @@ public struct DiscordMessage: ExpressibleByStringLiteral, Identifiable, Codable,
         self.type = .default
     }
 
-    ///
-    /// ExpressibleByStringLiteral conformance.
-    ///
-    /// - parameter unicodeScalarLiteral: The unicode scalar literal
-    ///
-    public init(unicodeScalarLiteral value: UnicodeScalarLiteralType) {
-        self.init(stringLiteral: String(extendedGraphemeClusterLiteral: value))
-    }
-
-    ///
-    /// ExpressibleByStringLiteral conformance.
-    ///
-    /// - parameter extendedGraphemeClusterLiteral: The grapheme scalar literal
-    ///
-    public init(extendedGraphemeClusterLiteral value: ExtendedGraphemeClusterLiteralType) {
-        self.init(stringLiteral: String(extendedGraphemeClusterLiteral: value))
-    }
-
-    ///
-    /// ExpressibleByStringLiteral conformance.
-    ///
-    /// - parameter stringLiteral: The string literal
-    ///
     public init(stringLiteral value: StringLiteralType) {
         self.init(content: value)
     }

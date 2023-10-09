@@ -31,17 +31,6 @@
 /// Likewise, if the token is an OAuth token, it must be preceded by "Bearer". User tokens can omit a prefix.
 ///
 public struct DiscordToken: RawRepresentable, Codable, ExpressibleByStringLiteral, ExpressibleByStringInterpolation, CustomStringConvertible, Hashable {
-    // MARK: Typealiases
-
-    /// ExpressibleByStringLiteral conformance
-    public typealias StringLiteralType = String
-
-    /// ExpressibleByStringLiteral conformance.
-    public typealias ExtendedGraphemeClusterLiteralType = String.ExtendedGraphemeClusterLiteralType
-
-    /// ExpressibleByStringLiteral conformance.
-    public typealias UnicodeScalarLiteralType = String.UnicodeScalarLiteralType
-
     // MARK: Properties
 
     /// The token.
@@ -61,38 +50,10 @@ public struct DiscordToken: RawRepresentable, Codable, ExpressibleByStringLitera
 
     // MARK: Initializers
 
-    ///
-    /// ExpressibleByStringLiteral conformance.
-    ///
-    /// - parameter unicodeScalarLiteral: The unicode scalar literal
-    ///
-    public init(unicodeScalarLiteral value: UnicodeScalarLiteralType) {
-        rawValue = String(unicodeScalarLiteral: value)
-    }
-
-    ///
-    /// ExpressibleByStringLiteral conformance.
-    ///
-    /// - parameter extendedGraphemeClusterLiteral: The grapheme scalar literal
-    ///
-    public init(extendedGraphemeClusterLiteral value: ExtendedGraphemeClusterLiteralType) {
-        rawValue = String(extendedGraphemeClusterLiteral: value)
-    }
-
-    ///
-    /// ExpressibleByStringLiteral conformance.
-    ///
-    /// - parameter stringLiteral: The string literal
-    ///
     public init(stringLiteral value: StringLiteralType) {
         rawValue = value
     }
 
-    ///
-    /// ExpressibleByStringInterpolation conformance.
-    ///
-    /// - parameter stringInterpolation: The interpolation
-    ///
     public init(stringInterpolation: String.StringInterpolation) {
         rawValue = String(stringInterpolation: stringInterpolation)
     }

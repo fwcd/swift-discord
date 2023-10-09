@@ -211,11 +211,6 @@ public struct DiscordLazyDictionary<K: Hashable, V> : ExpressibleByDictionaryLit
 
     // MARK: Initializers
 
-    ///
-    /// ExpressibleByDictionaryLiteral conformance.
-    ///
-    /// - parameter dictionaryLiteral: Array of keyvalue pairs.
-    ///
     public init(dictionaryLiteral elements: (Key, Value)...) {
         backingDictionary = [Key: DiscordLazyValue<Value>]()
 

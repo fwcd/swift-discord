@@ -289,12 +289,6 @@ public class DiscordClient: DiscordShardManagerDelegate, DiscordUserActor, Disco
 
     // MARK: DiscordShardManagerDelegate conformance.
 
-    ///
-    /// Signals that the manager has finished connecting.
-    ///
-    /// - parameter manager: The manager.
-    /// - parameter didConnect: Should always be true.
-    ///
     public func shardManager(_ manager: DiscordShardManager, didConnect connected: Bool) {
         handleQueue.async {
             self.connected = true
@@ -303,13 +297,6 @@ public class DiscordClient: DiscordShardManagerDelegate, DiscordUserActor, Disco
         }
     }
 
-    ///
-    /// Signals that the manager has disconnected.
-    ///
-    /// - parameter manager: The manager.
-    /// - parameter didDisconnectWithReason: The reason why the manager disconnected.
-    /// - parameter closed: Whether the socket was closed.
-    ///
     public func shardManager(_ manager: DiscordShardManager, didDisconnectWithReason reason: DiscordGatewayCloseReason, closed: Bool) {
         handleQueue.async {
             self.connected = false
@@ -318,12 +305,6 @@ public class DiscordClient: DiscordShardManagerDelegate, DiscordUserActor, Disco
         }
     }
 
-    ///
-    /// Signals that the manager received an event. The client should handle this.
-    ///
-    /// - parameter manager: The manager.
-    /// - parameter shouldHandleEvent: The event to be handled.
-    ///
     public func shardManager(_ manager: DiscordShardManager, shouldHandleEvent event: DiscordDispatchEvent) {
         handleQueue.async {
             self.handleDispatch(event: event)
