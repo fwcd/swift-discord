@@ -32,7 +32,7 @@ public protocol DiscordClientDelegate : AnyObject {
     func client(_ client: DiscordClient, didConnect connected: Bool)
 
     ///
-    /// Called when the client disconnects with discord.
+    /// Called when the client disconnects from discord.
     ///
     /// - parameter client: The client that is calling.
     /// - parameter didDisconnectWithReason: The reason the client disconnected.
