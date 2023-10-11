@@ -16,6 +16,7 @@
 // ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+import Derive
 import Foundation
 #if canImport(FoundationNetworking)
 import FoundationNetworking
@@ -153,6 +154,7 @@ public struct DiscordChannel: Codable, Identifiable, Hashable {
 }
 
 /// Represents the type of a channel.
+@DeriveCustomStringConvertible
 public struct DiscordChannelType: RawRepresentable, Codable, Hashable {
     public var rawValue: Int
 

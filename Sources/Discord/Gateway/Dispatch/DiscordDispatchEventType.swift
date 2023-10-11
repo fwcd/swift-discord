@@ -1,4 +1,7 @@
+import Derive
+
 /// An enum that represents the dispatch events Discord sends.
+@DeriveCustomStringConvertible
 public struct DiscordDispatchEventType: RawRepresentable, Codable, Hashable {
     public let rawValue: String
 

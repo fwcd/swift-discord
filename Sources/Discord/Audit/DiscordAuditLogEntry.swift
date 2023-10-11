@@ -15,6 +15,7 @@
 // ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+import Derive
 import Foundation
 
 /// Represents an audit entry.
@@ -121,7 +122,8 @@ public struct DiscordAuditLogChange: Decodable {
 }
 
 /// The types of audit actions.
-public struct DiscordAuditLogActionType: RawRepresentable, Codable {
+@DeriveCustomStringConvertible
+public struct DiscordAuditLogActionType: RawRepresentable, Codable, Hashable {
     public var rawValue: Int
 
     public static let guildUpdate = DiscordAuditLogActionType(rawValue: 1)

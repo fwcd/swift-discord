@@ -16,10 +16,12 @@
 // ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+import Derive
 import Foundation
 
 /// Represents the reason a gateway was closed.
-public struct DiscordGatewayCloseReason: RawRepresentable, Codable {
+@DeriveCustomStringConvertible
+public struct DiscordGatewayCloseReason: RawRepresentable, Codable, Hashable {
     public var rawValue: Int
 
     /// We don't quite know why the gateway closed.

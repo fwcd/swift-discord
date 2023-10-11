@@ -16,6 +16,7 @@
 // ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+import Derive
 import Foundation
 
 /// Represents a Discord chat message.
@@ -279,6 +280,7 @@ public struct DiscordMessage: ExpressibleByStringLiteral, Identifiable, Codable,
     /// Represents an action that be taken on a message.
     public struct Activity: Codable, Hashable {
         /// Represents the type of activity.
+        @DeriveCustomStringConvertible
         public struct ActivityType: RawRepresentable, Codable, Hashable {
             public var rawValue: Int
 
@@ -307,6 +309,7 @@ public struct DiscordMessage: ExpressibleByStringLiteral, Identifiable, Codable,
 }
 
 /// The type of a message.
+@DeriveCustomStringConvertible
 public struct DiscordMessageType: RawRepresentable, Codable, Hashable {
     public var rawValue: Int
 

@@ -16,6 +16,7 @@
 // ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+import Derive
 import Foundation
 
 /// Represents a presence.
@@ -62,6 +63,7 @@ public struct DiscordPresence: Codable, Identifiable, Hashable {
 }
 
 /// Represents a presence status.
+@DeriveCustomStringConvertible
 public struct DiscordPresenceStatus: RawRepresentable, Codable, Hashable {
     public var rawValue: String
 
@@ -80,6 +82,7 @@ public struct DiscordPresenceStatus: RawRepresentable, Codable, Hashable {
 }
 
 /// Represents an activity type.
+@DeriveCustomStringConvertible
 public struct DiscordActivityType: RawRepresentable, Codable, Hashable {
     public var rawValue: Int
 
