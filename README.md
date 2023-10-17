@@ -5,6 +5,8 @@
 
 A client library for the [Discord API](https://discord.com/developers/docs) written in Swift.
 
+This project is a fork of [nuclearace's](https://github.com/nuclearace) [`SwiftDiscord`](https://github.com/nuclearace/SwiftDiscord), which is no longer actively maintained as of 2023. Among other changes, the codebase has been [refactored](https://github.com/fwcd/swift-discord/pull/4) to employ modern Swift patterns, such as value types and `Codable`, along with support for the v9 API.
+
 ## Example
 
 ```swift
