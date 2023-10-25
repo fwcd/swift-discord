@@ -94,7 +94,7 @@ public class DiscordEngine: DiscordShard {
     public var sessionId: String?
 
     /// The underlying WebSocket.
-    public var websocket: WebSocket?
+    public var webSocket: WebSocket?
 
     /// Whether this engine is connected to the gateway.
     public internal(set) var connected = false
@@ -221,7 +221,7 @@ public class DiscordEngine: DiscordShard {
         case .reconnect:
             eventLoop.execute {
                 logger.info("Closing on reconnect")
-                self.websocket?.close().whenComplete { _ in
+                self.webSocket?.close().whenComplete { _ in
                     logger.info("Resuming gateway on reconnect")
                     self.resumeGateway()
                 }

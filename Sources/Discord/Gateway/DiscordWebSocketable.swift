@@ -41,7 +41,7 @@ public protocol DiscordWebSocketable: AnyObject {
     var parseQueue: DispatchQueue { get }
 
     /// A reference to the underlying WebSocket.
-    var websocket: WebSocket? { get set }
+    var webSocket: WebSocket? { get set }
 
     // MARK: Methods
 
@@ -73,7 +73,7 @@ public protocol DiscordWebSocketable: AnyObject {
 public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordEventLoopable {
     /// Default implementation.
     func attachWebSocketHandlers() {
-        websocket?.onText { [weak self] ws, text in
+        webSocket?.onText { [weak self] ws, text in
             guard let this = self else { return }
 
             logger.debug("\(this.description), Got text: \(text)")
@@ -81,7 +81,7 @@ public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordEv
             this.parseAndHandleGatewayMessage(text)
         }
         
-        websocket?.onClose.whenSuccess { [weak self] in
+        webSocket?.onClose.whenSuccess { [weak self] in
             guard let this = self else { return }
             
             logger.info("WebSocket closed, \(this.description)")
@@ -89,7 +89,7 @@ public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordEv
             this.handleClose(reason: nil)
         }
 
-        websocket?.onClose.whenFailure { [weak self] err in
+        webSocket?.onClose.whenFailure { [weak self] err in
             guard let this = self else { return }
 
             logger.info("WebSocket errored: \(err), \(this.description);")
@@ -128,7 +128,7 @@ public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordEv
 
             logger.info("Websocket connected, shard: \(this.description)")
 
-            this.websocket = ws
+            this.webSocket = ws
             this.connectUUID = UUID()
 
             this.attachWebSocketHandlers()
@@ -153,6 +153,6 @@ public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordEv
             return
         }
 
-        let _ = websocket?.close()
+        let _ = webSocket?.close()
     }
 }

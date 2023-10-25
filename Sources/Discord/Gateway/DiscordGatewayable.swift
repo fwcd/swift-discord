@@ -70,7 +70,7 @@ public extension DiscordGatewayable where Self: DiscordWebSocketable & DiscordEv
         logger.debug("Sending ws: \(string)")
 
         eventLoop.execute {
-            self.websocket?.send(string)
+            self.webSocket?.send(string)
         }
     }
 }
