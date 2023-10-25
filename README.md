@@ -9,6 +9,8 @@ This project is a fork of [nuclearace's](https://github.com/nuclearace) [`SwiftD
 
 ## Example
 
+A simple Discord bot that responds to every "ping" message with "pong" could be implemented as follows:
+
 ```swift
 import Discord
 import Dispatch
