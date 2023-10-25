@@ -35,11 +35,14 @@ public struct DiscordGatewayIntents: OptionSet, RawRepresentable, Codable, Hasha
     public static let directMessageReactions = DiscordGatewayIntents(rawValue: 1 << 13)
     /// Direct message typing indicators.
     public static let directMessageTyping = DiscordGatewayIntents(rawValue: 1 << 14)
+    /// (Non-empty) message content in message data across the API. This is a privileged intent.
+    public static let messageContent = DiscordGatewayIntents(rawValue: 1 << 15)
 
     /// The privileged intents (which may require enabling in the Discord developer console).
     public static let privilegedIntents: DiscordGatewayIntents = [
         .guildMembers,
-        .guildPresences
+        .guildPresences,
+        .messageContent,
     ]
 
     /// The unprivileged intents. Use these if you don't need the privileged intents.
