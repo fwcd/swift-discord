@@ -6,7 +6,11 @@ class PingPongBot: DiscordClientDelegate {
     private var client: DiscordClient!
 
     init(token: String) {
-        client = DiscordClient(token: "Bot \(token)", delegate: self)
+        client = DiscordClient(
+            token: "Bot \(token)",
+            delegate: self,
+            configuration: [.intents([.guildMessages, .messageContent])]
+        )
         client.connect()
     }
 
