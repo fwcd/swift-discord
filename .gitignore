@@ -12,3 +12,4 @@ DiscordTestUITests/
 /.vscode
 /.swiftpm
 xcuserdata
+.env
