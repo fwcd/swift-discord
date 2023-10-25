@@ -1,4 +1,4 @@
-// swift-tools-version:5.6
+// swift-tools-version:5.7
 
 // The MIT License (MIT)
 // Copyright (c) 2016 Erik Little
