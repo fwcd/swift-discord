@@ -13,11 +13,11 @@ This project is a fork of [nuclearace's](https://github.com/nuclearace) [`SwiftD
 import Discord
 import Dispatch
 
-class Bot: DiscordClientDelegate {
+class PingPongBot: DiscordClientDelegate {
     private var client: DiscordClient!
 
     init() {
-        client = DiscordClient(token: "Bot myjwt.from.discord", delegate: self)
+        client = DiscordClient(token: "Bot <your token>", delegate: self)
         client.connect()
     }
 
@@ -28,11 +28,17 @@ class Bot: DiscordClientDelegate {
     }
 }
 
-let bot = Bot()
+let bot = PingPongBot()
 dispatchMain()
 ```
 
-Check out the [docs](https://fwcd.github.io/swift-discord/documentation/discord) for more details.
+You can run this example (which is provided as a [snippet](Snippets/PingPongBot.swift)) with
+
+```sh
+swift run PingPongBot <your token>
+```
+
+Check out the [docs](https://fwcd.github.io/swift-discord/documentation/discord) for more detailed information about the API.
 
 ## Features
 
