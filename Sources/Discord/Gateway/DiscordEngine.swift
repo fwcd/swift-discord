@@ -154,20 +154,18 @@ public class DiscordEngine: DiscordShard {
     ///
     /// - parameter reason: The reason the socket closed.
     ///
-    public func handleClose(reason: Error? = nil) {
-        let closeReason = DiscordGatewayCloseReason(error: reason) ?? .unknown
-
+    public func handleClose(reason: DiscordGatewayCloseReason = .unknown) {
         connected = false
 
         logger.info("Disconnected, shard: \(shardNum)")
 
-        if closeReason == .sessionTimeout {
+        if reason == .sessionTimeout {
             sessionId = nil
         }
 
-        delegate?.shard(self, didDisconnectWithReason: closeReason, closed: closed)
+        delegate?.shard(self, didDisconnectWithReason: reason, closed: closed)
 
-        if delegate?.shard(self, shouldAttemptResuming: closeReason, closed: closed) ?? false {
+        if delegate?.shard(self, shouldAttemptResuming: reason, closed: closed) ?? false {
             resumeGateway()
         }
     }

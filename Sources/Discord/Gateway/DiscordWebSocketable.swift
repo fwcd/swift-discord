@@ -67,7 +67,7 @@ public protocol DiscordWebSocketable: AnyObject {
     ///
     /// - parameter reason: The reason the socket closed.
     ///
-    func handleClose(reason: Error?)
+    func handleClose(reason: DiscordGatewayCloseReason)
 }
 
 public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordEventLoopable {
@@ -84,9 +84,12 @@ public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordEv
         webSocket?.onClose.whenSuccess { [weak self] in
             guard let self else { return }
             
-            logger.info("WebSocket closed, \(self.description)")
+            let code = self.webSocket?.closeCode
+            let reason = code.map { DiscordGatewayCloseReason(rawValue: Int(UInt16(webSocketErrorCode: $0))) } ?? .unknown
+
+            logger.info("WebSocket closed with reason \(reason), \(self.description)")
             
-            self.handleClose(reason: nil)
+            self.handleClose(reason: reason)
         }
 
         webSocket?.onClose.whenFailure { [weak self] err in
@@ -94,7 +97,7 @@ public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordEv
 
             logger.info("WebSocket errored: \(err), \(self.description);")
 
-            self.handleClose(reason: nil)
+            self.handleClose(reason: .unknown)
         }
     }
 
@@ -140,7 +143,7 @@ public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordEv
             
             logger.info("WebSocket errored, closing: \(err), \(self.description)")
             
-            self.handleClose(reason: err)
+            self.handleClose(reason: .init(error: err) ?? .unknown)
         }
     }
 
@@ -148,7 +151,7 @@ public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordEv
         logger.info("Closing WebSocket, shard: \(description)")
 
         guard !fast else {
-            handleClose(reason: nil)
+            handleClose(reason: .unknown)
 
             return
         }
