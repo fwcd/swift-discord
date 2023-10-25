@@ -57,7 +57,7 @@ public protocol DiscordGatewayable: DiscordEngineHeartbeatable {
     func startHandshake()
 }
 
-public extension DiscordGatewayable where Self: DiscordWebSocketable & DiscordRunLoopable {
+public extension DiscordGatewayable where Self: DiscordWebSocketable & DiscordEventLoopable {
     /// Default Implementation.
     func sendPayload(_ payload: DiscordGatewayCommand) {
         guard let data = try? DiscordJSON.makeEncoder().encode(payload),
@@ -69,7 +69,7 @@ public extension DiscordGatewayable where Self: DiscordWebSocketable & DiscordRu
 
         logger.debug("Sending ws: \(string)")
 
-        runloop.execute {
+        eventLoop.execute {
             self.websocket?.send(string)
         }
     }

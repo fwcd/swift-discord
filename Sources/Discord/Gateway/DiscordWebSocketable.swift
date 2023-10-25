@@ -70,7 +70,7 @@ public protocol DiscordWebSocketable: AnyObject {
     func handleClose(reason: Error?)
 }
 
-public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordRunLoopable {
+public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordEventLoopable {
     /// Default implementation.
     func attachWebSocketHandlers() {
         websocket?.onText { [weak self] ws, text in
@@ -102,7 +102,7 @@ public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordRu
     /// Starts the connection to the Discord gateway.
     ///
     func connect() {
-        runloop.execute(self._connect)
+        eventLoop.execute(self._connect)
     }
 
     private func _connect() {
@@ -122,7 +122,7 @@ public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordRu
                 tlsConfiguration: .clientDefault,
                 maxFrameSize: 1 << 31
             ),
-            on: runloop
+            on: eventLoop
         ) { [weak self] ws in
             guard let this = self else { return }
 

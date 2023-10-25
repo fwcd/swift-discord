@@ -76,7 +76,7 @@ public class DiscordEngine: DiscordShard {
     public let numShards: Int
 
     /// The run loop for this shard.
-    public let runloop: EventLoop
+    public let eventLoop: EventLoop
 
     /// The shard number of this engine.
     public let shardNum: Int
@@ -133,7 +133,7 @@ public class DiscordEngine: DiscordShard {
         self.shardNum = shardNum
         self.numShards = numShards
         self.intents = intents
-        self.runloop = onLoop
+        self.eventLoop = onLoop
     }
 
     // MARK: Methods
@@ -219,7 +219,7 @@ public class DiscordEngine: DiscordShard {
             heartbeatQueue.sync { self.pongsMissed = 0 }
             logger.debug("Got heartbeat ack")
         case .reconnect:
-            runloop.execute {
+            eventLoop.execute {
                 logger.info("Closing on reconnect")
                 self.websocket?.close().whenComplete { _ in
                     logger.info("Resuming gateway on reconnect")

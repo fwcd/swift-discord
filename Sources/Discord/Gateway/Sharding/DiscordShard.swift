@@ -20,7 +20,7 @@ import NIO
 
 /// Protocol that represents a sharded gateway connection. This is the top-level protocol for
 /// `DiscordEngine`
-public protocol DiscordShard: DiscordWebSocketable, DiscordGatewayable, DiscordRunLoopable {
+public protocol DiscordShard: DiscordWebSocketable, DiscordGatewayable, DiscordEventLoopable {
     // MARK: Properties
 
     /// Whether this shard is connected to the gateway

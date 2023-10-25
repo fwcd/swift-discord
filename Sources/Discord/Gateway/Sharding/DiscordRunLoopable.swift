@@ -18,8 +18,8 @@
 
 import NIO
 
-/// Marks that a type will contain a runloop.
-public protocol DiscordRunLoopable {
+/// Marks that a type will contain an event loop.
+public protocol DiscordEventLoopable {
     /// The run loop for this entity.
-    var runloop: EventLoop { get }
+    var eventLoop: EventLoop { get }
 }
