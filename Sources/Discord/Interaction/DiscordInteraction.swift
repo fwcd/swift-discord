@@ -1,3 +1,4 @@
+import Derive
 import Foundation
 
 /// Represents a slash-command invocation by the user.
@@ -47,6 +48,7 @@ public struct DiscordInteraction: Identifiable, Codable, Hashable {
     public let version: Int
 }
 
+@DeriveCustomStringConvertible
 public struct DiscordInteractionType: RawRepresentable, Hashable, Codable {
     public var rawValue: Int
 

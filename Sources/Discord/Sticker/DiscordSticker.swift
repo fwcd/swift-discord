@@ -15,6 +15,8 @@
 // ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+import Derive
+
 public struct DiscordSticker: Identifiable, Codable, Hashable {
     public enum CodingKeys: String, CodingKey {
         case id
@@ -45,6 +47,7 @@ public struct DiscordSticker: Identifiable, Codable, Hashable {
     public let formatType: DiscordStickerFormatType?
 }
 
+@DeriveCustomStringConvertible
 public struct DiscordStickerFormatType: RawRepresentable, Codable, Hashable {
     public var rawValue: Int
 

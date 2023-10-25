@@ -1,7 +1,10 @@
+import Derive
+
 /// An intent defines the events the gateway should
 /// subscribe to.
 ///
 /// See https://discord.com/developers/docs/topics/gateway#gateway-intents
+@DeriveCustomStringConvertible
 public struct DiscordGatewayIntents: OptionSet, RawRepresentable, Codable, Hashable {
     public let rawValue: Int
 

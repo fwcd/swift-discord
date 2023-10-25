@@ -16,6 +16,7 @@
 // ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+import Derive
 import Foundation
 
 /// An application using the Discord API.
@@ -93,6 +94,7 @@ public struct DiscordApplication: Codable, Hashable {
 }
 
 /// Public flags of an application.
+@DeriveCustomStringConvertible
 public struct DiscordApplicationFlags: RawRepresentable, Codable, OptionSet, Hashable {
     public var rawValue: UInt32
 

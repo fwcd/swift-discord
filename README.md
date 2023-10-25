@@ -50,7 +50,7 @@ Check out the [docs](https://fwcd.github.io/swift-discord/documentation/discord)
 
 ## Requirements
 
-- Swift 5.7+
+- Swift 5.9+
 
 ## Building
 

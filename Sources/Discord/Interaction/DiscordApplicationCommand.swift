@@ -1,3 +1,4 @@
+import Derive
 import Foundation
 
 /// Represents a slash-command. The base command model of the
@@ -124,6 +125,7 @@ public enum DiscordApplicationCommandOptionChoiceValue: Codable, Hashable {
     }
 }
 
+@DeriveCustomStringConvertible
 public struct DiscordApplicationCommandOptionType: RawRepresentable, Codable, Hashable {
     public var rawValue: Int
 

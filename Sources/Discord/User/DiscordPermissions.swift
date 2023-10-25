@@ -17,8 +17,10 @@
 // DEALINGS IN THE SOFTWARE.
 
 import BigInt
+import Derive
 
 /// Represents a Discord Permission. Calculating Permissions involves bitwise operations.
+@DeriveCustomStringConvertible
 public struct DiscordPermissions: RawRepresentable, OptionSet, Codable, Hashable {
     public var rawValue: BigInt
 
@@ -161,6 +163,7 @@ public enum DiscordPermissionsError: Error {
 }
 
 /// Represents a permission overwrite type for a channel.
+@DeriveCustomStringConvertible
 public struct DiscordPermissionOverwriteType: RawRepresentable, Codable, Hashable {
     public var rawValue: Int
 
