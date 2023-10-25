@@ -218,8 +218,14 @@ public class DiscordEngine: DiscordShard {
         case .heartbeatAck:
             heartbeatQueue.sync { self.pongsMissed = 0 }
             logger.debug("Got heartbeat ack")
-        default:
-            logger.error("Unhandled payload: \(event)")
+        case .reconnect:
+            runloop.execute {
+                logger.info("Closing on reconnect")
+                self.websocket?.close().whenComplete { _ in
+                    logger.info("Resuming gateway on reconnect")
+                    self.resumeGateway()
+                }
+            }
         }
     }
 
