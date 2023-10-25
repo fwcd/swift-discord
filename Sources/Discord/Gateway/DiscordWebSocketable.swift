@@ -126,7 +126,7 @@ public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordEv
         ) { [weak self] ws in
             guard let this = self else { return }
 
-            logger.info("Websocket connected, shard: \(this.description)")
+            logger.info("WebSocket connected, shard: \(this.description)")
 
             this.webSocket = ws
             this.connectUUID = UUID()
