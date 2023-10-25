@@ -49,7 +49,7 @@ public protocol DiscordShardManagerDelegate : AnyObject, DiscordEventLoopGroupMa
     func shardManager(_ manager: DiscordShardManager, shouldAttemptResuming reason: DiscordGatewayCloseReason, closed: Bool) -> Bool
 
     ///
-    /// Signals that the manager received an event. The client should handle this.
+    /// Signals that the manager received an event. The client should handle self.
     ///
     /// - parameter manager: The manager.
     /// - parameter shouldHandleEvent: The event to be handled.

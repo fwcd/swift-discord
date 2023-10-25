@@ -313,12 +313,12 @@ public class DiscordEngine: DiscordShard {
 
     private func _resumeGateway(wait: Int) {
         handleQueue.asyncAfter(deadline: DispatchTime.now() + Double(wait)) {[weak self] in
-            guard let this = self, this.resuming else { return }
+            guard let self, self.resuming else { return }
 
             logger.debug("Calling engine connect for gateway resume with wait: \(wait)")
 
-            this.connect()
-            this._resumeGateway(wait: 10)
+            self.connect()
+            self._resumeGateway(wait: 10)
         }
     }
 
@@ -351,9 +351,9 @@ public class DiscordEngine: DiscordShard {
         let time = DispatchTime.now() + .milliseconds(heartbeatInterval)
 
         heartbeatQueue.asyncAfter(deadline: time) {[weak self, uuid = connectUUID] in
-            guard let this = self, uuid == this.connectUUID else { return }
+            guard let self, uuid == self.connectUUID else { return }
 
-            this.sendHeartbeat()
+            self.sendHeartbeat()
         }
     }
 

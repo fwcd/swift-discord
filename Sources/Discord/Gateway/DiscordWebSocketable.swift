@@ -74,27 +74,27 @@ public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordEv
     /// Default implementation.
     func attachWebSocketHandlers() {
         webSocket?.onText { [weak self] ws, text in
-            guard let this = self else { return }
+            guard let self else { return }
 
-            logger.debug("\(this.description), Got text: \(text)")
+            logger.debug("\(self.description), Got text: \(text)")
 
-            this.parseAndHandleGatewayMessage(text)
+            self.parseAndHandleGatewayMessage(text)
         }
         
         webSocket?.onClose.whenSuccess { [weak self] in
-            guard let this = self else { return }
+            guard let self else { return }
             
-            logger.info("WebSocket closed, \(this.description)")
+            logger.info("WebSocket closed, \(self.description)")
             
-            this.handleClose(reason: nil)
+            self.handleClose(reason: nil)
         }
 
         webSocket?.onClose.whenFailure { [weak self] err in
-            guard let this = self else { return }
+            guard let self else { return }
 
-            logger.info("WebSocket errored: \(err), \(this.description);")
+            logger.info("WebSocket errored: \(err), \(self.description);")
 
-            this.handleClose(reason: nil)
+            self.handleClose(reason: nil)
         }
     }
 
@@ -124,23 +124,23 @@ public extension DiscordWebSocketable where Self: DiscordGatewayable & DiscordEv
             ),
             on: eventLoop
         ) { [weak self] ws in
-            guard let this = self else { return }
+            guard let self else { return }
 
-            logger.info("WebSocket connected, shard: \(this.description)")
+            logger.info("WebSocket connected, shard: \(self.description)")
 
-            this.webSocket = ws
-            this.connectUUID = UUID()
+            self.webSocket = ws
+            self.connectUUID = UUID()
 
-            this.attachWebSocketHandlers()
-            this.startHandshake()
+            self.attachWebSocketHandlers()
+            self.startHandshake()
         }
         
         future.whenFailure { [weak self] err in
-            guard let this = self else { return }
+            guard let self else { return }
             
-            logger.info("WebSocket errored, closing: \(err), \(this.description)")
+            logger.info("WebSocket errored, closing: \(err), \(self.description)")
             
-            this.handleClose(reason: err)
+            self.handleClose(reason: err)
         }
     }
 
