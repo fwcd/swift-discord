@@ -16,7 +16,11 @@ class Bot: DiscordClientDelegate {
     private var client: DiscordClient!
 
     init() {
-        client = DiscordClient(token: "Bot myjwt.from.discord", delegate: self)
+        client = DiscordClient(
+            token: "Bot <your token>",
+            delegate: self,
+            configuration: [.intents([.guildMessages, .messageContent])]
+        )
         client.connect()
     }
 
