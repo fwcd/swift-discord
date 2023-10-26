@@ -32,6 +32,20 @@ private let os = "Linux"
 
 fileprivate let logger = Logger(label: "DiscordEngine")
 
+/// Close reasons upon which the engine will automatically attempt to reconnect.
+/// We intentionally exclude `.rateLimited` to avoid spamming reconnects.
+/// See https://discord.com/developers/docs/topics/opcodes-and-status-codes#gateway-gateway-close-event-codes
+private let autoReconnectReasons: Set<DiscordGatewayCloseReason> = [
+    .goingAway,
+    .unknownError,
+    .unknownOpcode,
+    .decodeError,
+    .notAuthenticated,
+    .alreadyAuthenticated,
+    .invalidSequence,
+    .sessionTimeout,
+]
+
 ///
 /// The base class for Discord WebSocket communications.
 ///
@@ -165,7 +179,11 @@ public class DiscordEngine: DiscordShard {
 
         delegate?.shard(self, didDisconnectWithReason: reason, closed: closed)
 
-        if delegate?.shard(self, shouldAttemptResuming: reason, closed: closed) ?? false {
+        if autoReconnectReasons.contains(reason) {
+            logger.info("Automatically reconnecting on \(reason)")
+            resumeGateway()
+        } else if delegate?.shard(self, shouldAttemptResuming: reason, closed: closed) ?? false {
+            logger.info("Delegate told us to resume on \(reason), so let's do that...")
             resumeGateway()
         }
     }

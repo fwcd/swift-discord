@@ -19,7 +19,7 @@
 import Foundation
 
 /// Represents the reason a gateway was closed.
-public struct DiscordGatewayCloseReason: RawRepresentable, Codable {
+public struct DiscordGatewayCloseReason: RawRepresentable, Codable, Hashable {
     public var rawValue: Int
 
     /// We don't quite know why the gateway closed.
@@ -28,6 +28,8 @@ public struct DiscordGatewayCloseReason: RawRepresentable, Codable {
     public static let noNetwork = DiscordGatewayCloseReason(rawValue: 50)
     /// The gateway closed from a normal WebSocket close event.
     public static let normal = DiscordGatewayCloseReason(rawValue: 1000)
+    /// The endpoint is going away.
+    public static let goingAway = DiscordGatewayCloseReason(rawValue: 1001)
     /// Something went wrong, but we aren't quite sure either.
     public static let unknownError = DiscordGatewayCloseReason(rawValue: 4000)
     /// Discord got an opcode is doesn't recognize.
