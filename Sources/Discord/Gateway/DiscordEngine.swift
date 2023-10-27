@@ -171,7 +171,7 @@ public class DiscordEngine: DiscordShard {
     public func handleClose(reason: DiscordGatewayCloseReason = .unknown) {
         connected = false
 
-        logger.info("Disconnected, shard: \(shardNum)")
+        logger.info("Disconnected on \(reason), shard: \(shardNum)")
 
         if reason == .sessionTimeout {
             sessionId = nil
@@ -185,6 +185,8 @@ public class DiscordEngine: DiscordShard {
         } else if delegate?.shard(self, shouldAttemptResuming: reason, closed: closed) ?? false {
             logger.info("Delegate told us to resume on \(reason), so let's do that...")
             resumeGateway()
+        } else {
+            logger.debug("Neither the delegate nor the automatic reconnect reasons contain \(autoReconnectReasons), thus we will not reconnect")
         }
     }
 
