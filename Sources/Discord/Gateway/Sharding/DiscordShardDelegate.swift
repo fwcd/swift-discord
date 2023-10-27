@@ -27,6 +27,7 @@ public protocol DiscordShardDelegate: AnyObject, DiscordTokenBearer {
 
     ///
     /// Used by shards to signal that they have disconnected
+    /// and will not reconnect.
     ///
     /// - parameter shard: The shard that disconnected.
     /// - parameter reason: The reason why the shard disconnected.

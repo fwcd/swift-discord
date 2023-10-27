@@ -177,8 +177,6 @@ public class DiscordEngine: DiscordShard {
             sessionId = nil
         }
 
-        delegate?.shard(self, didDisconnectWithReason: reason, closed: closed)
-
         if autoReconnectReasons.contains(reason) {
             logger.info("Automatically reconnecting on \(reason)")
             resumeGateway()
@@ -186,7 +184,8 @@ public class DiscordEngine: DiscordShard {
             logger.info("Delegate told us to resume on \(reason), so let's do that...")
             resumeGateway()
         } else {
-            logger.debug("Neither the delegate nor the automatic reconnect reasons contain \(autoReconnectReasons), thus we will not reconnect")
+            logger.debug("Neither the delegate nor the automatic reconnect reasons contain \(autoReconnectReasons), thus we will not reconnect. Notfying the delegate...")
+            delegate?.shard(self, didDisconnectWithReason: reason, closed: closed)
         }
     }
 
