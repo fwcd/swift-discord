@@ -56,6 +56,9 @@ public enum DiscordClientOption : CustomStringConvertible, Equatable {
     /// will create one internally and also shut it down on deinitialization.
     case eventLoopGroup(EventLoopGroup)
 
+    /// The settings for voice engines. See `DiscordVoiceEngineConfiguration` for defaults.
+    case voiceConfiguration(DiscordVoiceEngineConfiguration)
+
     // MARK: Properties
 
     /// - returns: A description of this option
@@ -70,6 +73,7 @@ public enum DiscordClientOption : CustomStringConvertible, Equatable {
         case .pruneUsers:           return "pruneUsers"
         case .intents:              return "intents"
         case .eventLoopGroup:       return "eventLoopGroup"
+        case .voiceConfiguration:   return "voiceConfiguration"
         }
     }
 

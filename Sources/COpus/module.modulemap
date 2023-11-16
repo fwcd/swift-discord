@@ -1,0 +1,5 @@
+module COpus [system] {
+  header "shim.h"
+  link "opus"
+  export *
+}
