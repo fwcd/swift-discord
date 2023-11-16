@@ -28,7 +28,6 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/vapor/websocket-kit.git", .upToNextMinor(from: "2.14.0")),
-        .package(url: "https://github.com/Kitura/BlueSocket.git", .upToNextMinor(from: "2.0.4")),
         .package(url: "https://github.com/apple/swift-log.git", from: "1.0.0"),
         .package(url: "https://github.com/attaswift/BigInt.git", from: "5.2.1"),
         .package(url: "https://github.com/apple/swift-docc-plugin.git", from: "1.0.0"),
@@ -36,7 +35,6 @@ let package = Package(
     targets: [
         .target(name: "Discord", dependencies: [
             .product(name: "WebSocketKit", package: "websocket-kit"),
-            .product(name: "Socket", package: "BlueSocket"),
             .product(name: "Logging", package: "swift-log"),
             .product(name: "BigInt", package: "BigInt"),
         ]),
