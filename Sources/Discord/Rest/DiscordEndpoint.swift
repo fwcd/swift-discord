@@ -315,7 +315,7 @@ public extension DiscordEndpoint {
         case let .messages(channel):
             return "/channels/\(channel)/messages"
         case let .bulkMessageDelete(channel):
-            return "/channels/\(channel)/messages/bulk_delete"
+            return "/channels/\(channel)/messages/bulk-delete"
         case let .channelMessage(channel, message):
             return "/channels/\(channel)/messages/\(message)"
         case let .channelMessageDelete(channel, message):
