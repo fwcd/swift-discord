@@ -8,9 +8,9 @@ public extension DiscordEndpointConsumer where Self: DiscordUserActor {
     func createInteractionResponse(for interactionId: InteractionID,
                                    token interactionToken: String,
                                    response: DiscordInteractionResponse,
-                                   callback: ((HTTPURLResponse?) -> ())? = nil){
+                                   callback: ((Data?, HTTPURLResponse?) -> ())? = nil){
         let requestCallback: DiscordRequestCallback = { data, response, error in
-            callback?(response)
+            callback?(data, response)
         }
         rateLimiter.executeRequest(endpoint: .interactionsCallback(interactionId: interactionId, interactionToken: interactionToken),
                                    token: token,

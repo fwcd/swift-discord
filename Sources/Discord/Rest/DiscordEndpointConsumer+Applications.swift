@@ -72,10 +72,10 @@ public extension DiscordEndpointConsumer where Self: DiscordUserActor {
 
     /// Default implementation
     func deleteApplicationCommand(_ commandId: CommandID,
-                                  callback: ((HTTPURLResponse?) -> ())? = nil) {
-        guard let applicationId = user?.id else { callback?(nil); return }
+                                  callback: ((Data?, HTTPURLResponse?) -> ())? = nil) {
+        guard let applicationId = user?.id else { callback?(nil, nil); return }
         let requestCallback: DiscordRequestCallback = { data, response, error in
-            callback?(response)
+            callback?(data, response)
         }
         rateLimiter.executeRequest(endpoint: .globalApplicationCommand(applicationId: applicationId, commandId: commandId),
                                    token: token,
@@ -149,10 +149,10 @@ public extension DiscordEndpointConsumer where Self: DiscordUserActor {
     /// Default implementation
     func deleteApplicationCommand(_ commandId: CommandID,
                                   on guildId: GuildID,
-                                  callback: ((HTTPURLResponse?) -> ())? = nil) {
-        guard let applicationId = user?.id else { callback?(nil); return }
+                                  callback: ((Data?, HTTPURLResponse?) -> ())? = nil) {
+        guard let applicationId = user?.id else { callback?(nil, nil); return }
         let requestCallback: DiscordRequestCallback = { data, response, error in
-            callback?(response)
+            callback?(data, response)
         }
         rateLimiter.executeRequest(endpoint: .guildApplicationCommand(applicationId: applicationId, guildId: guildId, commandId: commandId),
                                    token: token,

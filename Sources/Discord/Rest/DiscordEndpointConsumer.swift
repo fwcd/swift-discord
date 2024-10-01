@@ -723,7 +723,7 @@ public protocol DiscordEndpointConsumer {
     /// - parameter callback: The callback function, taking a command.
     ///
     func deleteApplicationCommand(_ commandId: CommandID,
-                                  callback: ((HTTPURLResponse?) -> ())?)
+                                  callback: ((Data?, HTTPURLResponse?) -> ())?)
 
     ///
     /// Gets the guild-specific slash-commands of a user.
@@ -763,7 +763,7 @@ public protocol DiscordEndpointConsumer {
     ///
     func deleteApplicationCommand(_ commandId: CommandID,
                                   on guildId: GuildID,
-                                  callback: ((HTTPURLResponse?) -> ())?)
+                                  callback: ((Data?, HTTPURLResponse?) -> ())?)
 
     ///
     /// Creates a response to an interaction from the gateway.
@@ -773,7 +773,7 @@ public protocol DiscordEndpointConsumer {
     func createInteractionResponse(for interactionId: InteractionID,
                                    token: String,
                                    response: DiscordInteractionResponse,
-                                   callback: ((HTTPURLResponse?) -> ())?)
+                                   callback: ((Data?, HTTPURLResponse?) -> ())?)
 
     // MARK: Misc
 
