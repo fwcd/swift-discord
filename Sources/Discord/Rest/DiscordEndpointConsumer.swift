@@ -179,7 +179,7 @@ public protocol DiscordEndpointConsumer {
     ///
     func editMessage(_ messageId: MessageID,
                      on channelId: ChannelID,
-                     content: String,
+                     edit: DiscordMessage.Edit,
                      callback: ((DiscordMessage?, HTTPURLResponse?) -> ())?)
 
     ///

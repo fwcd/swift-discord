@@ -219,9 +219,9 @@ public extension DiscordEndpointConsumer where Self: DiscordUserActor {
     /// Default implementation
     func editMessage(_ messageId: MessageID,
                             on channelId: ChannelID,
-                            content: String,
+                            edit: DiscordMessage.Edit,
                             callback: ((DiscordMessage?, HTTPURLResponse?) -> ())? = nil) {
-        guard let contentData = try? DiscordJSON.encode(["content": content]) else { return }
+        guard let contentData = try? DiscordJSON.encode(edit) else { return }
 
         let requestCallback: DiscordRequestCallback = { data, response, error in
             guard let message: DiscordMessage = DiscordJSON.decodeResponse(data: data, response: response) else {

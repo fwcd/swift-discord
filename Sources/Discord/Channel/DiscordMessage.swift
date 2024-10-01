@@ -39,6 +39,29 @@ public struct DiscordMessage: ExpressibleByStringLiteral, Identifiable, Codable,
         let components: [DiscordMessageComponent]?
     }
 
+    // Used for `editMessage`
+    public struct Edit: Codable, Hashable {
+        enum CodingKeys: String, CodingKey {
+            case content
+            case embed
+            case components
+        }
+
+        public var content: String?
+        public var embed: DiscordEmbed?
+        public var components: [DiscordMessageComponent]?
+
+        public init(
+            content: String? = nil,
+            embed: DiscordEmbed? = nil,
+            components: [DiscordMessageComponent]? = nil
+        ) {
+            self.content = content
+            self.embed = embed
+            self.components = components
+        }
+    }
+
     public enum CodingKeys: String, CodingKey {
         case activity
         case application
