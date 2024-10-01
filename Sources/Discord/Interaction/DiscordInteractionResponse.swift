@@ -23,9 +23,11 @@ public enum DiscordInteractionResponseType: Int, Encodable {
     case pong = 1
 
     /// Ack a command without sending a message, eating the user's input
+    @available(*, deprecated, message: "This type no longer seems to be supported")
     case acknowledge = 2
 
     /// Respond with a message, eating the user's input
+    @available(*, deprecated, message: "This type no longer seems to be supported")
     case channelMessage = 3
 
     /// Respond with a message, showing the user's input
