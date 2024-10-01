@@ -251,14 +251,14 @@ public protocol DiscordEndpointConsumer {
     /// Sending a message with an embed:
     ///
     /// ```swift
-    /// client.sendMessage(DiscordMessage(content: "This message also comes with an embed", embed: embed),
+    /// client.sendMessage(DiscordMessage(content: "This message also comes with an embed", embeds: [embed]),
     ///                    to: channelId, callback: nil)
     /// ```
     ///
     /// Sending a fully loaded message:
     ///
     /// ```swift
-    /// client.sendMessage(DiscordMessage(content: "This message has it all", embed: embed, file: file),
+    /// client.sendMessage(DiscordMessage(content: "This message has it all", embeds: [embed], file: file),
     ///                    to: channelId, callback: nil)
     /// ```
     ///
