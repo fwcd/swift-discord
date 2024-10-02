@@ -25,7 +25,7 @@ public struct DiscordMessage: ExpressibleByStringLiteral, Identifiable, Codable,
         enum CodingKeys: String, CodingKey {
             case content
             case tts
-            case embed
+            case embeds
             case allowedMentions = "allowed_mentions"
             case messageReference = "message_reference"
             case components
@@ -33,7 +33,7 @@ public struct DiscordMessage: ExpressibleByStringLiteral, Identifiable, Codable,
 
         let content: String
         let tts: Bool
-        let embed: DiscordEmbed?
+        let embeds: [DiscordEmbed]
         let allowedMentions: DiscordAllowedMentions?
         let messageReference: DiscordMessageReference?
         let components: [DiscordMessageComponent]?
@@ -43,21 +43,21 @@ public struct DiscordMessage: ExpressibleByStringLiteral, Identifiable, Codable,
     public struct Edit: Codable, Hashable {
         enum CodingKeys: String, CodingKey {
             case content
-            case embed
+            case embeds
             case components
         }
 
         public var content: String?
-        public var embed: DiscordEmbed?
+        public var embeds: [DiscordEmbed]?
         public var components: [DiscordMessageComponent]?
 
         public init(
             content: String? = nil,
-            embed: DiscordEmbed? = nil,
+            embeds: [DiscordEmbed]? = nil,
             components: [DiscordMessageComponent]? = nil
         ) {
             self.content = content
-            self.embed = embed
+            self.embeds = embeds
             self.components = components
         }
     }
@@ -241,7 +241,7 @@ public struct DiscordMessage: ExpressibleByStringLiteral, Identifiable, Codable,
     ///
     public init(
         content: String = "",
-        embed: DiscordEmbed? = nil,
+        embeds: [DiscordEmbed] = [],
         files: [DiscordFileUpload] = [],
         tts: Bool = false,
         allowedMentions: DiscordAllowedMentions? = nil,
@@ -249,7 +249,7 @@ public struct DiscordMessage: ExpressibleByStringLiteral, Identifiable, Codable,
         components: [DiscordMessageComponent] = []
     ) {
         self.content = content
-        self.embeds = embed.map { [$0] } ?? []
+        self.embeds = embeds
         self.activity = nil
         self.application = nil
         self.files = files
@@ -284,7 +284,7 @@ public struct DiscordMessage: ExpressibleByStringLiteral, Identifiable, Codable,
         let fields = Draft(
             content: content ?? "",
             tts: tts ?? false,
-            embed: embeds?.first,
+            embeds: embeds ?? [],
             allowedMentions: allowedMentions,
             messageReference: messageReference,
             components: components
