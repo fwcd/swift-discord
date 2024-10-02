@@ -49,7 +49,7 @@ Check out the [docs](https://fwcd.github.io/swift-discord/documentation/discord)
 ## Features
 
 - macOS and Linux support
-- v9 API (including threads, interactions, slash commands and message components)
+- v10 API (including threads, interactions, slash commands and message components)
 - Configurable sharding
 
 ## Requirements
