@@ -51,6 +51,7 @@ Check out the [docs](https://fwcd.github.io/swift-discord/documentation/discord)
 - macOS and Linux support
 - v10 API (including threads, interactions, slash commands and message components)
 - Configurable sharding
+- Voice support
 
 ## Requirements
 

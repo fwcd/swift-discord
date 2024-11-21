@@ -252,6 +252,38 @@ public protocol DiscordClientDelegate : AnyObject {
     func client(_ client: DiscordClient, didReceiveVoiceStateUpdate voiceState: DiscordVoiceState)
 
     ///
+    /// Called when the client is ready to start sending voice data.
+    ///
+    /// - parameter client: The client that is calling.
+    /// - parameter isReadyToSendVoiceWithEngine: The encoder that will be used.
+    ///
+    func client(_ client: DiscordClient, isReadyToSendVoiceWithEngine engine: DiscordVoiceEngine)
+
+    ///
+    /// Called when the client receives opus voice data.
+    ///
+    /// **Note** This is called from a queue that is dedicated to voice data, not the `handleQueue`.
+    ///
+    /// - parameter client: The client that is calling.
+    /// - parameter didReceiveOpusVoiceData: The voice data that was received.
+    /// - parameter fromEngine: The voice engine that received the data.
+    ///
+    func client(_ client: DiscordClient, didReceiveOpusVoiceData voiceData: DiscordOpusVoiceData,
+                fromEngine engine: DiscordVoiceEngine)
+
+    ///
+    /// Called when the client receives raw voice data.
+    ///
+    /// **Note** This is called from a queue that is dedicated to voice data, not the `handleQueue`.
+    ///
+    /// - parameter client: The client that is calling.
+    /// - parameter didReceiveRawVoiceData: The voice data that was received.
+    /// - parameter fromEngine: The voice engine that received the data.
+    ///
+    func client(_ client: DiscordClient, didReceiveRawVoiceData voiceData: DiscordRawVoiceData,
+                fromEngine engine: DiscordVoiceEngine)
+
+    ///
     /// Called when the client handles a guild member chunk.
     ///
     /// - parameter client: The client that is calling.
@@ -365,6 +397,9 @@ public extension DiscordClientDelegate {
     func client(_ client: DiscordClient, didReceiveVoiceStateUpdate voiceState: DiscordVoiceState) { }
 
     /// Default.
+    func client(_ client: DiscordClient, isReadyToSendVoiceWithEngine engine: DiscordVoiceEngine) { }
+
+    /// Default.
     func client(_ client: DiscordClient, didHandleGuildMemberChunk chunk: [DiscordGuildMember],
                 forGuild guild: DiscordGuild) { }
 
@@ -375,4 +410,20 @@ public extension DiscordClientDelegate {
     func client(_ client: DiscordClient, didUpdateEmojis emojis: [DiscordEmoji],
                 onGuild guild: DiscordGuild) { }
 
+    /// Default.
+    func client(_ client: DiscordClient, didReceiveOpusVoiceData voiceData: DiscordOpusVoiceData,
+                fromEngine engine: DiscordVoiceEngine) { }
+
+    /// Default.
+    func client(_ client: DiscordClient, didReceiveRawVoiceData voiceData: DiscordRawVoiceData,
+                fromEngine engine: DiscordVoiceEngine) { }
+
+    #if !os(iOS)
+    /// Default
+    func client(_ client: DiscordClient, needsDataSourceForEngine engine: DiscordVoiceEngine) throws -> DiscordVoiceDataSource {
+        return try DiscordBufferedVoiceDataSource(opusEncoder: DiscordOpusEncoder(bitrate: 128_000,
+                                                                                  sampleRate: 48_000,
+                                                                                  channels: 2))
+    }
+    #endif
 }
